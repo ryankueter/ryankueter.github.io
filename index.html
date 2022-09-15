@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>GithubPages</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="GithubPages.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <style>
+            @keyframes slide {
+                0% {
+                    transform: translateX(-25%);
+                }
+
+                100% {
+                    transform: translateX(25%);
+                }
+            }
+
+            .splash-background {
+                animation: slide 3s ease-in-out infinite alternate;
+                background-image: linear-gradient(-60deg,#594ae2 50%,#7467ef 50%);
+                bottom: 0;
+                left: -50%;
+                opacity: .5;
+                position: fixed;
+                right: -50%;
+                top: 0;
+                z-index: -1
+            }
+
+            .splash-content {
+                left: 50%;
+                padding: 10vmin;
+                position: fixed;
+                text-align: center;
+                top: 50%;
+                transform: translate(-50%,-50%)
+            }
+            .splash-title {
+                color: #fff;
+                font-size: 50px;
+            }
+            .splash-subtitle {
+                color: #fff;
+                font-size: 20px;
+            }
+        </style>
+
+        <div style="height:100%;width:100%;margin:0;position:fixed;">
+            <div class="splash-background"></div>
+            <div class="splash-background" style="animation-direction:alternate-reverse;"></div>
+            <div class="splash-background"></div>
+            <div class="splash-content">
+                <h1 class="splash-title">Welcome to Ryan's Github.io</h1>
+                <p class="splash-subtitle">Written in Blazor WASM!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
