@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "GithubPages.dll": "sha256-cko+9SPOXPqHCp9FQe5q55Mzb\/yxoHhEnf15PNUZ6VA=",
+      "GithubPages.dll": "sha256-ric0Ma0wkdoEgcKTe7lb6MkNOMUi8tI6AYvFn3aPotk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-8dpFOJ+ErJwRKUlxA6Tl3DpZTjgKZ\/5a8Sz7LSni2l0=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0aR4Y1cN4iPqfEadyUaDtu2btR5SjzMAE0C7cPfuo1w=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-hItIMIcIumfGi1q3IylwSEfpyLuK1QShnYCDeXYXF+M=",
