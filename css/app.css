@@ -1,5 +1,46 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+.splash-background {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg,#594ae2 50%,#7467ef 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1
+}
+
+.splash-content {
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.splash-title {
+    color: #fff;
+    font-size: 50px;
+}
+
+.splash-subtitle {
+    color: #fff;
+    font-size: 20px;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

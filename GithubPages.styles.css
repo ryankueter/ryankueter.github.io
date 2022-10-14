@@ -1,3 +1,83 @@
+/* /Pages/ObjectTrackersPreview.razor.rz.scp.css */
+.app-card[b-if1aocxy7v] {
+    position: relative;
+    background: #fff;
+    border-radius: .25rem
+}
+
+.app-card-account[b-if1aocxy7v] {
+    height: 100%
+}
+
+.app-card-account .item[b-if1aocxy7v] {
+font-size: .875rem
+}
+
+.app-card-account .item .profile-image[b-if1aocxy7v] {
+    width: 60px;
+    height: 60px
+}
+
+.app-card-account .item .btn-sm[b-if1aocxy7v], .app-card-account .item .btn-group-sm > .btn[b-if1aocxy7v] {
+    padding: .125rem .5rem;
+    font-size: .75rem
+}
+
+.app-card .app-card-header[b-if1aocxy7v] {
+    border-bottom: 1px solid #e7e9ed
+}
+
+.app-card .app-icon-holder[b-if1aocxy7v] {
+    display: inline-block;
+    background: #FFF;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 50%
+}
+
+    .app-card .app-icon-holder.icon-holder-mono[b-if1aocxy7v] {
+        background: #f5f6fe;
+        color: #828d9f
+    }
+
+    .app-card .app-icon-holder svg[b-if1aocxy7v] {
+        width: 24px;
+        height: 24px
+    }
+
+.app-card .app-card-title[b-if1aocxy7v] {
+    font-size: 1.125rem;
+    margin-bottom: 0
+}
+
+.app-card .app-card-body.has-card-actions[b-if1aocxy7v] {
+    position: relative;
+    padding-right: 1rem !important
+}
+
+.app-card .app-card-body .app-card-actions[b-if1aocxy7v] {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    right: .75rem;
+    top: .75rem
+}
+
+    .app-card .app-card-body .app-card-actions:hover[b-if1aocxy7v] {
+        background: #f5f6fe
+    }
+
+    .app-card .app-card-body .app-card-actions .dropdown-menu[b-if1aocxy7v] {
+        font-size: .8125rem
+    }
+
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-gk27xe54wf] {
     position: relative;
