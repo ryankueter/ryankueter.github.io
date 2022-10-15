@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "FreeDataExports.dll": "sha256-YmRnbvNgZ6vUmPxMqZ1P1vwH5sfaAvZRf6tYjyETZpk=",
-      "GithubPages.dll": "sha256-8L3\/vtu3M4I1KIFIz6x0JsNDdMnrE\/5AKlxQYOll74A=",
+      "GithubPages.dll": "sha256-dMUZYLXavBfSCgIWlCFvB2HzwJq4BMK1+IS3AIhRJUA=",
       "Microsoft.AspNetCore.Components.dll": "sha256-fev5WmP87VXY1fWX1mNjoaMCAjJZPzMSnTqZtp9GZyc=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-wKtRmHVldPQQshRLrEttDvdmrneLAt0dIt\/TL\/ci7xM=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0eV4yKje+C2wDM2XmDtT2LopXTz7U8+qNCPxlZuwevc=",
