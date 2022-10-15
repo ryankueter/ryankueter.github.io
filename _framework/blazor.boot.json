@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "FreeDataExports.dll": "sha256-YmRnbvNgZ6vUmPxMqZ1P1vwH5sfaAvZRf6tYjyETZpk=",
-      "GithubPages.dll": "sha256-1jf1oWsl0ig2b4+GvvMA0+4Ssy\/QulDbaxb0wkqT6Xc=",
+      "GithubPages.dll": "sha256-8L3\/vtu3M4I1KIFIz6x0JsNDdMnrE\/5AKlxQYOll74A=",
       "Microsoft.AspNetCore.Components.dll": "sha256-fev5WmP87VXY1fWX1mNjoaMCAjJZPzMSnTqZtp9GZyc=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-wKtRmHVldPQQshRLrEttDvdmrneLAt0dIt\/TL\/ci7xM=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0eV4yKje+C2wDM2XmDtT2LopXTz7U8+qNCPxlZuwevc=",
@@ -25,7 +25,7 @@
       "Microsoft.JSInterop.dll": "sha256-tqur+VdhS2e4P3zFN\/LQRUkg3JCZbQrKp+NSER4gNbw=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-JnYE3PacT+0TrHdA2lIvLkQwSgtLQlRYc+tzxGVgpOM=",
       "ObjectTrackers.dll": "sha256-wM8BL7AXBuDPPpQQRz4rVjDqUU1D39Xre4GQr7WNJBk=",
-      "QuickPaginator.dll": "sha256-FssW00kF+U6ItgPTeGzXoN+i78uTM3AedTrMG3hDmRM=",
+      "QuickPaginator.dll": "sha256-U\/ttWyTbYozP426DWyDSsUqAEeC2xhCS4mp0MFZZtL8=",
       "System.Collections.Concurrent.dll": "sha256-smju2KS00Qk4Ai8LjDOROVsIcWHRJTkGfO7wED3+5KA=",
       "System.Collections.dll": "sha256-htMxPxjeP0UzEPmqAX9Mc9C\/P0fhPvgxFr8x\/rue5IE=",
       "System.Collections.Specialized.dll": "sha256-GcfnUpjyC\/mGTEktjLtNRDg4GUc7ReuqIm\/3TaMLXPg=",
