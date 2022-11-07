@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Ryan Kueter</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet" />
-    <link href="GithubPages.styles.css" rel="stylesheet" />
+    <link href="_content/BlazorApp.Components/css/bootstrap.min.css" rel="stylesheet">
+    <link href="_content/BlazorApp.Components/icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="_content/BlazorApp.Components/css/bs5theme.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="BlueTheme">
     <div id="app">
-        <div style="height:100%;width:100%;margin:0;position:fixed;">
-            <div class="splash-background"></div>
-            <div class="splash-background" style="animation-direction: alternate-reverse; animation-duration: 4s;"></div>
-            <div class="splash-background" style="animation-duration:5s;"></div>
-            <div class="splash-content">
-                <h1 class="splash-title">Welcome to Ryan's Github.io</h1>
-                <p class="splash-subtitle">Written in Blazor WASM!</p>
-            </div>
-        </div>
     </div>
 
     <div id="blazor-error-ui">
@@ -31,6 +21,8 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/BlazorApp.Components/js/bootstrap5/bootstrap.bundle.min.js"></script>
+    <script src="_content/BlazorApp.Components/js/BS5Theme.js"></script>
     <script src="js/download.js"></script>
 </body>
 
