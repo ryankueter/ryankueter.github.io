@@ -169,7 +169,7 @@ body {
     height: 100%;
     width: 100%;
     background: var(--BodyBackground);
-    overflow: hidden;
+    overflow: auto;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -705,25 +705,25 @@ button.close:focus {
     height: 100%;
 }
 
-.app-sidepanel .sidepanel-close {
-    display: none;
-    position: absolute;
-    z-index: 20;
-    right: -3.5rem;
-    top: 5px;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    border: 1px;
-    background-color: #FFFFFF;
-    color: #000000;
-    border: 1px solid #999;
-    border-radius: 23px;
-    text-align: center;
-    width: 48px;
-    height: 48px;
-    opacity: 0.5;
-}
+    .app-sidepanel .sidepanel-close {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        right: -3.5rem;
+        top: 5px;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        border: 1px;
+        background-color: var(--ThirdToneBackground);
+        color: var(--TextColor);
+        border: 1px solid var(--ButtonBorder);
+        border-radius: 23px;
+        text-align: center;
+        width: 48px;
+        height: 48px;
+        opacity: 0.5;
+    }
 
 .app-sidepanel.sidepanel-hidden {
     left: -400px;
@@ -958,9 +958,9 @@ button.close:focus {
 .app-wrapper {
     transition: all .4s ease-in-out;
     margin-top: 58px;
-    height: calc(100vh - 58px);
-    overflow-x: hidden;
-    overflow-y: auto;
+    /*height: calc(100vh - 58px);*/
+    /*overflow-x: hidden;
+    overflow-y: auto;*/
 }
 
 @media(prefers-reduced-motion: reduce) {
@@ -1720,23 +1720,23 @@ select.form-control:focus {
 }
 
 /* width */
-.scroll::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
     opacity: .8;
 }
 
 /* Track */
-.scroll::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
 /* Handle */
-.scroll::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: var(--ScrollColor);
     border-radius: 10px;
 }
 
 /* Handle on hover */
-.scroll::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: var(--ScrollColorHover);
 }
