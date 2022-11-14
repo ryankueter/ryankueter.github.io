@@ -1,5 +1,4 @@
-﻿
-/* https://google-webfonts-helper.herokuapp.com/fonts */
+﻿/* https://google-webfonts-helper.herokuapp.com/fonts */
 /* montserrat-regular - latin */
 @font-face {
     font-family: 'Montserrat';
@@ -19,24 +18,17 @@
 }
 
 .BlueTheme {
+    /* Primary Colors */
     --PrimaryGreen: #006400;
     --PrimaryRed: #8B0000;
-    --PrimaryColor: #5f7892;
-    --PrimaryColorHover: #859aaf;
-    --PrimaryColorText: #FFFFFF;
-    --SecondaryColor: #FFFFFF;
-    --SecondaryColorHover: #445668;
-    --DisabledColor: #f3f5f7;
-    --SecondaryBorderColor: #d6dde4;
+    /* Link Colors */
     --LinkColor: #445668;
     --LinkColorHover: #859aaf;
-    --TextColor: #5f7892;
-    --TextBoxBackgroundColor: #FFFFFF;
-    --ControlTextColor: #445668;
     --NavLinkBackground: #f3f5f7;
+    /* Button Colors */
     --PrimaryButtonColor: #5f7892;
     --PrimaryButtonColorHover: #859aaf;
-    --SecondaryButtonColorHover: #445668;
+    --PrimaryButtonBorderColor: #5f7892;
     --ButtonTextColor: #FFFFFF;
     --ButtonBackgroundColor: #FFFFFF;
     --ButtonBackgroundColorActive: #5f7892;
@@ -45,44 +37,56 @@
     --ButtonTextColorDisabled: #9fa7b5;
     --ButtonBackgroundColorDisabled: #252526;
     --ButtonBorderDisabled: #d6dde4;
+    --SecondaryButtonColorHover: #445668;
+    /* Textbox */
+    --TextBoxBackgroundColor: #FFFFFF;
+    /* Body */
+    --PrimaryColor: #5f7892;
+    --PrimaryColorHover: #859aaf;
+    --PrimaryTextColor: #FFFFFF;
+    --SecondaryColor: #FFFFFF;
+    --SecondaryColorHover: #445668;
+    --DisabledColor: #f3f5f7;
+    --SecondaryBorderColor: #d6dde4;
+    --TextColor: #5f7892;
+    --ControlTextColor: #445668;
     --BodyTextColor: #555555;
     --BodyBackground: #f3f5f7;
     --BorderColor: #d6dde4;
-    --TopBarBackground: #FFFFFF;
-    --CardBackground: #FFFFFF;
     --BorderActiveColor: #859aaf;
+    /* Top Nav */
+    --TopBarBackground: #FFFFFF;
+    /* Side Nav */
     --SidePanelBackground: #FFFFFF;
     --SidePanelNavItemBackground: #FFFFFF;
     --SidePanelNavText: #445668;
-    --AppCardCloseButton: none;
-    --AppCardHoverColor: #fbfbfe;
+    --SidePanelClose: #fafbff;
+    /* Cards */
+    --CardBackground: #FFFFFF;
+    --CardSecondaryBackground: #e9eaf1;
+    --CardCloseButton: none;
+    --CardHoverColor: #fbfbfe;
+    --CardFooter: #fafbff;
+    /* Other Controls */
     --CheckBoxColor: #5f7892;
-    --SecondToneBackground: #e9eaf1;
     --CalendarPicker: none;
-    --ThirdToneBackground: #fafbff;
+    /* Scroll */
     --ScrollColor: #d3d5d7;
     --ScrollColorHover: #dedede;
 }
 
 .DarkTheme {
+    /* Primary Colors */
     --PrimaryGreen: #006400;
     --PrimaryRed: #8B0000;
-    --PrimaryColor: #d6dde4;
-    --PrimaryColorHover: #859aaf;
-    --PrimaryColorText: #FFFFFF;
-    --SecondaryColor: #252526;
-    --SecondaryColorHover: #445668;
-    --SecondaryBorderColor: #2e2e2e;
-    --DisabledColor: #454546;
+    /* Links */
     --LinkColor: #D1D1D1;
     --LinkColorHover: #F1F1F1;
-    --TextColor: #c1c1c1;
-    --TextBoxBackgroundColor: #353536;
-    --ControlTextColor: #c1c1c1;
     --NavLinkBackground: #37373d;
+    /* Buttons */
     --PrimaryButtonColor: #2e2e2e;
     --PrimaryButtonColorHover: #555555;
-    --SecondaryButtonColorHover: #FFFFFF;
+    --PrimaryButtonBorderColor: #d6dde4;
     --ButtonTextColor: #FFFFFF;
     --ButtonBackgroundColor: #252526;
     --ButtonBackgroundColorActive: #FFFFFF;
@@ -91,21 +95,40 @@
     --ButtonTextColorDisabled: #9fa7b5;
     --ButtonBackgroundColorDisabled: #252526;
     --ButtonBorderDisabled: #d6dde4;
+    --SecondaryButtonColorHover: #FFFFFF;
+    /* Textbox */
+    --TextBoxBackgroundColor: #353536;
+    /* Body */
+    --PrimaryColor: #d6dde4;
+    --PrimaryColorHover: #859aaf;
+    --PrimaryTextColor: #FFFFFF;
+    --SecondaryColor: #252526;
+    --SecondaryColorHover: #445668;
+    --SecondaryBorderColor: #2e2e2e;
+    --DisabledColor: #454546;
+    --TextColor: #c1c1c1;
+    --ControlTextColor: #c1c1c1;
     --BodyTextColor: #d6dde4;
     --BodyBackground: #1e1e1e;
     --BorderColor: #2e2e2e;
     --BorderActiveColor: #859aaf;
+    /* Top Nav */
     --TopBarBackground: #252526;
-    --CardBackground: #252526;
+    /* Side Nav */
     --SidePanelBackground: #252526;
     --SidePanelNavItemBackground: #252526;
     --SidePanelNavText: #c1c1c1;
-    --AppCardCloseButton: invert(100%);
-    --AppCardHoverColor: #555555;
+    --SidePanelClose: #2e2e2e;
+    /* Cards */
+    --CardBackground: #252526;
+    --CardSecondaryBackground: #2e2e2e;
+    --CardCloseButton: invert(100%);
+    --CardHoverColor: #555555;
+    --CardFooter: #2e2e2e;
+    /* Other Controls */
     --CheckBoxColor: #2e2e2e;
-    --SecondToneBackground: #2e2e2e;
     --CalendarPicker: invert(1);
-    --ThirdToneBackground: #2e2e2e;
+    /* Scroll */
     --ScrollColor: #3e3e3e;
     --ScrollColorHover: #5e5e5e;
 }
@@ -122,12 +145,12 @@
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 @keyframes slide {
     0% {
@@ -180,12 +203,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 a {
     color: var(--LinkColor);
     text-decoration: none;
-    font-weight: bold;
 }
 
-a:hover {
-    color: var(--LinkColorHover);
-}
+    a:hover {
+        color: var(--LinkColorHover);
+    }
 
 *:disabled {
     background-color: var(--DisabledColor) !important;
@@ -193,10 +215,6 @@ a:hover {
 
 hr {
     background: #adb4c0;
-}
-
-p {
-    line-height: 1.5;
 }
 
 .text-muted {
@@ -269,24 +287,24 @@ a.app-link {
     text-decoration-color: rgba(37,41,48,.3);
 }
 
-a.app-link:hover {
-    color: var(--PrimaryColor);
-    -webkit-text-decoration-color: rgba(21,163,98,.8);
-    text-decoration-color: rgba(21,163,98,.8);
-}
+    a.app-link:hover {
+        color: var(--LinkColorHover);
+        -webkit-text-decoration-color: rgba(21,163,98,.8);
+        text-decoration-color: rgba(21,163,98,.8);
+    }
 
 .app-modal {
     background-color: var(--CardBackground);
     border-color: var(--BorderColor);
 }
 
-.app-modal .modal-header {
-    border-color: var(--BorderColor);
-}
+    .app-modal .modal-header {
+        border-color: var(--BorderColor);
+    }
 
-.app-modal .modal-footer {
-    border-color: var(--BorderColor);
-}
+    .app-modal .modal-footer {
+        border-color: var(--BorderColor);
+    }
 
 .close-btn {
     border: 0px;
@@ -308,33 +326,33 @@ button.close:focus {
     border: none;
 }
 
-.btn:hover, .btn:active, .btn:focus {
-    text-decoration: none;
-}
+    .btn:hover, .btn:active, .btn:focus {
+        text-decoration: none;
+    }
 
-.btn .bi {
-    position: relative;
-    top: -2px;
-}
+    .btn .bi {
+        position: relative;
+        top: -2px;
+    }
 
-.btn:focus, .btn.focus {
-    box-shadow: none !important;
-}
+    .btn:focus, .btn.focus {
+        box-shadow: none !important;
+    }
 
 .app-btn-primary {
     background: var(--PrimaryButtonColor);
-    color: var(--PrimaryColorText);
-    border-color: var(--PrimaryColor);
+    color: var(--PrimaryTextColor);
+    border-color: var(--PrimaryButtonBorderColor);
     cursor: pointer;
     height: 2rem;
     padding: 5px 10px;
 }
 
-.app-btn-primary:hover {
-    color: var(--PrimaryColorText);
-    background: var(--PrimaryButtonColorHover);
-    border-color: var(--PrimaryColorHover);
-}
+    .app-btn-primary:hover {
+        color: var(--PrimaryTextColor);
+        background: var(--PrimaryButtonColorHover);
+        border-color: var(--PrimaryColorHover);
+    }
 
 .app-btn-secondary {
     background: var(--SecondaryColor);
@@ -345,11 +363,11 @@ button.close:focus {
     padding: 5px 10px;
 }
 
-.app-btn-secondary:hover {
-    color: var(--SecondaryButtonColorHover);
-    border: 1px solid var(--PrimaryColorHover);
-    background: var(--SecondaryColor);
-}
+    .app-btn-secondary:hover {
+        color: var(--SecondaryButtonColorHover);
+        border: 1px solid var(--PrimaryColorHover);
+        background: var(--SecondaryColor);
+    }
 
 .borderless {
     border: none !important;
@@ -360,10 +378,10 @@ button.close:focus {
     color: var(--PrimaryColor);
 }
 
-.btn-light:hover {
-    background: var(--BodyBackground);
-    color: var(--PrimaryColor);
-}
+    .btn-light:hover {
+        background: var(--BodyBackground);
+        color: var(--PrimaryColor);
+    }
 
 .form-control {
     padding-top: .6rem;
@@ -375,48 +393,47 @@ button.close:focus {
     background-color: var(--TextBoxBackgroundColor);
 }
 
-.form-control:focus {
-    box-shadow: none;
-    outline: none;
-    color: var(--TextColor);
-    border-color: var(--BorderActiveColor);
-    background-color: var(--TextBoxBackgroundColor);
-}
+    .form-control:focus {
+        box-shadow: none;
+        outline: none;
+        color: var(--TextColor);
+        border-color: var(--BorderActiveColor);
+        background-color: var(--TextBoxBackgroundColor);
+    }
 
 .form-check-input {
     background-color: var(--CheckBoxColor);
     border-color: var(--PrimaryColor);
 }
 
-.form-check-input:checked {
-    background-color: var(--CheckBoxColor);
-    border-color: var(--PrimaryColor);
-}
+    .form-check-input:checked {
+        background-color: var(--CheckBoxColor);
+        border-color: var(--PrimaryColor);
+    }
 
 .dropdown-menu {
     border-color: var(--BorderColor);
     background-color: var(--SidePanelBackground);
-    
 }
 
-.dropdown-menu .dropdown-item {
-    padding: .5rem 1rem;
-    color: var(--PrimaryColor);
-    font-size: 14px;
-    cursor: pointer;
-}
+    .dropdown-menu .dropdown-item {
+        padding: .5rem 1rem;
+        color: var(--PrimaryColor);
+        font-size: 14px;
+        cursor: pointer;
+    }
 
-.dropdown-menu .dropdown-item:hover {
-    color: var(--ControlTextColor);
-}
+        .dropdown-menu .dropdown-item:hover {
+            color: var(--ControlTextColor);
+        }
 
-.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
-    background: var(--NavLinkBackground);
-}
+        .dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
+            background: var(--NavLinkBackground);
+        }
 
-.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
-    background: #fafbff;
-}
+        .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+            background: #fafbff;
+        }
 
 .dropdown-icon {
     font-size: 18px;
@@ -452,84 +469,84 @@ button.close:focus {
     max-width: 600px;
 }
 
-.app-search-form .search-input {
-    font-size: .875rem;
-    border-radius: .25rem;
-    padding-right: 3rem;
-    padding-left: 1rem;
-}
+    .app-search-form .search-input {
+        font-size: .875rem;
+        border-radius: .25rem;
+        padding-right: 3rem;
+        padding-left: 1rem;
+    }
 
-.app-search-form .search-input:focus {
-    border-color: var(--BorderColor);
-}
+        .app-search-form .search-input:focus {
+            border-color: var(--BorderColor);
+        }
 
-.app-search-form .search-btn {
-    color: #828d9f;
-    background: none;
-    border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-right: 0;
-    padding: .5rem 1rem;
-}
+    .app-search-form .search-btn {
+        color: #828d9f;
+        background: none;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: 0;
+        padding: .5rem 1rem;
+    }
 
-.app-search-form .search-btn:active, .app-search-form .search-btn:focus, .app-search-form .search-btn:hover {
-    outline: none !important;
-    color: var(--PrimaryColor);
-    box-shadow: none;
-}
+        .app-search-form .search-btn:active, .app-search-form .search-btn:focus, .app-search-form .search-btn:hover {
+            outline: none !important;
+            color: var(--PrimaryColor);
+            box-shadow: none;
+        }
 
 .app-utility-item {
     display: inline-block;
     margin-right: 1.25rem;
 }
 
-.app-utility-item:last-child {
-    margin-right: 0;
-}
+    .app-utility-item:last-child {
+        margin-right: 0;
+    }
 
-.app-utility-item > a {
-    color: var(--TextColor);
-}
+    .app-utility-item > a {
+        color: var(--TextColor);
+    }
 
-.app-utility-item > a:hover {
-    color: var(--ControlTextColor);
-}
+        .app-utility-item > a:hover {
+            color: var(--ControlTextColor);
+        }
 
-.app-utility-item .dropdown-toggle {
-    position: relative;
-}
+    .app-utility-item .dropdown-toggle {
+        position: relative;
+    }
 
-.app-utility-item .dropdown-menu {
-    font-size: .875rem;
-    margin: 0;
-}
+    .app-utility-item .dropdown-menu {
+        font-size: .875rem;
+        margin: 0;
+    }
 
-.app-utility-item .dropdown-menu.show {
-    top: 23px !important;
-}
+        .app-utility-item .dropdown-menu.show {
+            top: 23px !important;
+        }
 
-.app-utility-item .icon {
-    font-size: 1.25rem;
-    width: 24px;
-    height: 24px;
-}
+    .app-utility-item .icon {
+        font-size: 1.25rem;
+        width: 24px;
+        height: 24px;
+    }
 
-.app-utility-item .icon-badge {
-    display: inline-block;
-    border-radius: 50%;
-    position: absolute;
-    right: -0.45rem;
-    top: -0.3rem;
-    width: 20px;
-    height: 20px;
-    font-size: .6rem;
-    font-weight: bold;
-    padding-top: 1px;
-    color: #fff;
-    text-align: center;
-}
+    .app-utility-item .icon-badge {
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        right: -0.45rem;
+        top: -0.3rem;
+        width: 20px;
+        height: 20px;
+        font-size: .6rem;
+        font-weight: bold;
+        padding-top: 1px;
+        color: #fff;
+        text-align: center;
+    }
 
 .badge.bg-success {
     background-color: var(--PrimaryGreen) !important;
@@ -544,60 +561,60 @@ button.close:focus {
     width: 300px;
 }
 
-.app-notifications-dropdown .dropdown-menu .dropdown-menu-header {
-    border-bottom: 1px solid var(--BorderColor);
-}
+    .app-notifications-dropdown .dropdown-menu .dropdown-menu-header {
+        border-bottom: 1px solid var(--BorderColor);
+    }
 
-.app-notifications-dropdown .dropdown-menu .dropdown-menu-title {
-    font-size: 1rem;
-}
+    .app-notifications-dropdown .dropdown-menu .dropdown-menu-title {
+        font-size: 1rem;
+    }
 
-.app-notifications-dropdown .dropdown-menu .profile-image {
-    width: 36px;
-    height: 36px;
-}
+    .app-notifications-dropdown .dropdown-menu .profile-image {
+        width: 36px;
+        height: 36px;
+    }
 
-.app-notifications-dropdown .dropdown-menu .info {
-    padding-right: 80px;
-    position: relative;
-}
+    .app-notifications-dropdown .dropdown-menu .info {
+        padding-right: 80px;
+        position: relative;
+    }
 
-.app-notifications-dropdown .dropdown-menu .meta {
-    color: #828d9f;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: .75rem;
-}
+    .app-notifications-dropdown .dropdown-menu .meta {
+        color: #828d9f;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: .75rem;
+    }
 
-.app-notifications-dropdown .dropdown-menu .dropdown-menu-footer {
-    border-top: 1px solid var(--BorderColor);
-    color: var(--TextColor);
-}
+    .app-notifications-dropdown .dropdown-menu .dropdown-menu-footer {
+        border-top: 1px solid var(--BorderColor);
+        color: var(--TextColor);
+    }
 
-.app-notifications-dropdown .dropdown-menu .item {
-    min-width: 250px;
-    position: relative;
-    border-bottom: 1px solid var(--BorderColor);
-    color: var(--TextColor);
-}
+    .app-notifications-dropdown .dropdown-menu .item {
+        min-width: 250px;
+        position: relative;
+        border-bottom: 1px solid var(--BorderColor);
+        color: var(--TextColor);
+    }
 
-.app-notifications-dropdown .dropdown-menu .item:last-child {
-    border-bottom: none;
-}
+        .app-notifications-dropdown .dropdown-menu .item:last-child {
+            border-bottom: none;
+        }
 
-.app-notifications-dropdown .dropdown-menu .item:hover {
-    background: var(--NavLinkBackground);
-}
+        .app-notifications-dropdown .dropdown-menu .item:hover {
+            background: var(--NavLinkBackground);
+        }
 
-.app-notifications-dropdown .dropdown-menu .link-mask {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-}
+    .app-notifications-dropdown .dropdown-menu .link-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+    }
 
 .app-notifications-dropdown .app-icon-holder {
     display: inline-block;
@@ -611,24 +628,24 @@ button.close:focus {
     border-radius: 50%;
 }
 
-.app-notifications-dropdown .app-icon-holder.icon-holder-mono {
-    background: var(--BodyBackground);
-    color: #828d9f;
-}
+    .app-notifications-dropdown .app-icon-holder.icon-holder-mono {
+        background: var(--BodyBackground);
+        color: #828d9f;
+    }
 
-.app-notifications-dropdown .app-icon-holder svg {
-    width: 20px;
-    height: 20px;
-}
+    .app-notifications-dropdown .app-icon-holder svg {
+        width: 20px;
+        height: 20px;
+    }
 
 .app-user-dropdown {
     display: inline-block;
 }
 
-.app-user-dropdown img {
-    width: 36px;
-    height: 36px;
-}
+    .app-user-dropdown img {
+        width: 36px;
+        height: 36px;
+    }
 
 @media(min-width: 576px) {
     .app-notifications-dropdown .dropdown-menu {
@@ -703,18 +720,18 @@ button.close:focus {
     border-right: 1px solid var(--BorderColor);
 }
 
-.app-sidepanel .panel-drop {
-    display: none;
-}
+    .app-sidepanel .panel-drop {
+        display: none;
+    }
 
-.app-sidepanel .sidepanel-inner {
-    position: relative;
-    z-index: 10;
-    background: var(--SidePanelBackground);
-    box-shadow: rgba(0,0,0,.05) 0px 8px 15px;
-    width: 250px;
-    height: 100%;
-}
+    .app-sidepanel .sidepanel-inner {
+        position: relative;
+        z-index: 10;
+        background: var(--SidePanelBackground);
+        box-shadow: rgba(0,0,0,.05) 0px 8px 15px;
+        width: 250px;
+        height: 100%;
+    }
 
     .app-sidepanel .sidepanel-close {
         display: none;
@@ -726,7 +743,7 @@ button.close:focus {
         font-size: 2rem;
         cursor: pointer;
         border: 1px;
-        background-color: var(--ThirdToneBackground);
+        background-color: var(--SidePanelClose);
         color: var(--TextColor);
         border: 1px solid var(--ButtonBorder);
         border-radius: 23px;
@@ -736,48 +753,48 @@ button.close:focus {
         opacity: 0.5;
     }
 
-.app-sidepanel.sidepanel-hidden {
-    left: -400px;
-}
+    .app-sidepanel.sidepanel-hidden {
+        left: -400px;
+    }
 
-.app-sidepanel.sidepanel-visible {
-    left: 0;
-}
+    .app-sidepanel.sidepanel-visible {
+        left: 0;
+    }
 
-.app-sidepanel .app-nav-main {
-    overflow-y: auto;
-    scrollbar-color: rgba(0,0,0,.1) var(--BorderColor);
-    scrollbar-width: thin;
-}
+    .app-sidepanel .app-nav-main {
+        overflow-y: auto;
+        scrollbar-color: rgba(0,0,0,.1) var(--BorderColor);
+        scrollbar-width: thin;
+    }
 
-.app-sidepanel .app-nav-main::-webkit-scrollbar {
-    width: 6px;
-    background-color: var(--BorderColor);
-}
+        .app-sidepanel .app-nav-main::-webkit-scrollbar {
+            width: 6px;
+            background-color: var(--BorderColor);
+        }
 
-.app-sidepanel .app-nav-main::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,.1);
-    border-radius: .5rem;
-}
+        .app-sidepanel .app-nav-main::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,.1);
+            border-radius: .5rem;
+        }
 
 .app-branding {
-    height: 80px;
+    height: 60px;
     padding-top: 1rem;
     padding-left: 1rem;
     margin-bottom: 1rem;
 }
 
-.app-branding .logo-icon {
-    width: 70px;
-    height: 70px;
-}
+    .app-branding .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
 
-.app-branding .logo-text {
-    color: var(--ControlTextColor);
-    font-size: 1.25rem;
-    font-weight: 600;
-    vertical-align: middle;
-}
+    .app-branding .logo-text {
+        color: var(--ControlTextColor);
+        font-size: 1.25rem;
+        font-weight: 600;
+        vertical-align: middle;
+    }
 
 .app-nav {
     color: var(--TextColor);
@@ -786,68 +803,68 @@ button.close:focus {
     width: 100%;
 }
 
-.app-nav .app-menu {
-    margin-bottom: 0;
-}
+    .app-nav .app-menu {
+        margin-bottom: 0;
+    }
 
-.app-nav .nav-item {
-    display: block;
-    color: var(--TextColor);
-    background: var(--SidePanelNavItemBackground);
-}
+    .app-nav .nav-item {
+        display: block;
+        color: var(--TextColor);
+        background: var(--SidePanelNavItemBackground);
+    }
 
-.app-nav .nav-link {
-    display: block;
-    padding: .875rem 1rem;
-    color: var(--ControlTextColor);
-    position: relative;
-    display: block;
-    padding-left: 3rem;
-    border-left: 3px solid transparent;
-}
+    .app-nav .nav-link {
+        display: block;
+        padding: .875rem 1rem;
+        color: var(--ControlTextColor);
+        position: relative;
+        display: block;
+        padding-left: 3rem;
+        border-left: 3px solid transparent;
+    }
 
-.app-nav .nav-link.active {
-    color: var(--PrimaryColor);
-    background: var(--NavLinkBackground);
-    border-left: 3px solid var(--PrimaryColor);
-    font-weight: 500;
-}
+        .app-nav .nav-link.active {
+            color: var(--PrimaryColor);
+            background: var(--NavLinkBackground);
+            border-left: 3px solid var(--PrimaryColor);
+            font-weight: 500;
+        }
 
-.app-nav .nav-link.submenu-toggle.active {
-    background: none;
-    border-color: transparent;
-}
+        .app-nav .nav-link.submenu-toggle.active {
+            background: none;
+            border-color: transparent;
+        }
 
-.app-nav .nav-link:hover {
-    color: var(--PrimaryColor);
-}
+        .app-nav .nav-link:hover {
+            color: var(--PrimaryColor);
+        }
 
-.app-nav .nav-icon {
-    position: absolute;
-    left: 1rem;
-    top: .7rem;
-}
+    .app-nav .nav-icon {
+        position: absolute;
+        left: 1rem;
+        top: .7rem;
+    }
 
-.app-nav .nav-icon .bi {
-    width: 1.25rem;
-    height: 1.25rem;
-}
+        .app-nav .nav-icon .bi {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
 
-.app-nav .submenu-arrow {
-    position: absolute;
-    right: 1rem;
-    top: .7rem;
-    color: #828d9f;
-}
+    .app-nav .submenu-arrow {
+        position: absolute;
+        right: 1rem;
+        top: .7rem;
+        color: #828d9f;
+    }
 
-.app-nav .submenu-arrow svg {
-    width: 14px;
-    height: 14px;
-}
+        .app-nav .submenu-arrow svg {
+            width: 14px;
+            height: 14px;
+        }
 
-.app-nav .submenu-toggle {
-    transition: all .4s ease-in-out;
-}
+    .app-nav .submenu-toggle {
+        transition: all .4s ease-in-out;
+    }
 
 @media(prefers-reduced-motion: reduce) {
     .app-nav .submenu-toggle {
@@ -859,11 +876,11 @@ button.close:focus {
     color: var(--ControlTextColor);
 }
 
-.app-nav .submenu-toggle[aria-expanded=true] .submenu-arrow svg {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-}
+    .app-nav .submenu-toggle[aria-expanded=true] .submenu-arrow svg {
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
 
 .app-nav .submenu-item {
     margin-bottom: 0;
@@ -880,30 +897,30 @@ button.close:focus {
     margin-bottom: 0;
 }
 
-.app-nav .submenu-link:before {
-    background-color: var(--BorderColor);
-    content: " ";
-    display: inline-block;
-    height: inherit;
-    left: 0;
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    margin-top: -0.5rem;
-}
+    .app-nav .submenu-link:before {
+        background-color: var(--BorderColor);
+        content: " ";
+        display: inline-block;
+        height: inherit;
+        left: 0;
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        margin-top: -0.5rem;
+    }
 
-.app-nav .submenu-link:hover {
-    color: var(--ControlTextColor);
-}
+    .app-nav .submenu-link:hover {
+        color: var(--ControlTextColor);
+    }
 
-.app-nav .submenu-link.active {
-    color: var(--PrimaryColor);
-    background: var(--NavLinkBackground);
-}
+    .app-nav .submenu-link.active {
+        color: var(--PrimaryColor);
+        background: var(--NavLinkBackground);
+    }
 
-.app-nav .submenu-link.active:before {
-    background-color: var(--PrimaryColor);
-}
+        .app-nav .submenu-link.active:before {
+            background-color: var(--PrimaryColor);
+        }
 
 .app-sidepanel-footer {
     width: 100%;
@@ -913,9 +930,9 @@ button.close:focus {
     background: var(--BodyBackground);
 }
 
-.app-sidepanel-footer .app-nav-footer {
-    margin-bottom: 0;
-}
+    .app-sidepanel-footer .app-nav-footer {
+        margin-bottom: 0;
+    }
 
 @media(max-width: 1199.98px) {
     .app-sidepanel {
@@ -969,9 +986,8 @@ button.close:focus {
 .app-wrapper {
     transition: all .4s ease-in-out;
     margin-top: 58px;
-    font-size: 15px;
-    /*height: calc(100vh - 58px);*/
-    /*overflow-x: hidden;
+    /*height: calc(100vh - 58px);
+    overflow-x: hidden;
     overflow-y: auto;*/
 }
 
@@ -1030,9 +1046,9 @@ button.close:focus {
     font-size: .875rem;
 }
 
-.app-card .card-header-action a:hover {
-    text-decoration: underline;
-}
+    .app-card .card-header-action a:hover {
+        text-decoration: underline;
+    }
 
 .btn-icon {
     font-size: 15px;
@@ -1048,10 +1064,10 @@ button.close:focus {
     border-color: var(--SecondaryBorderColor);
 }
 
-.form-select:focus {
-    box-shadow: none;
-    outline: none;
-}
+    .form-select:focus {
+        box-shadow: none;
+        outline: none;
+    }
 
 select.form-control {
     height: 2rem;
@@ -1064,69 +1080,69 @@ select.form-control {
     appearance: menulist !important;
 }
 
-select.form-control:focus {
-    box-shadow: none;
-    outline: none;
-}
+    select.form-control:focus {
+        box-shadow: none;
+        outline: none;
+    }
 
 .app-card .form-select-holder {
     display: inline-block;
 }
 
 .btn-close {
-    filter: var(--AppCardCloseButton);
+    filter: var(--CardCloseButton);
 }
 
 .app-card .btn-close {
     padding: 1rem;
 }
 
-.app-card .btn-close:focus {
-    box-shadow: none;
-}
+    .app-card .btn-close:focus {
+        box-shadow: none;
+    }
 
 .app-card-stat {
     text-align: center;
 }
 
-.app-card-stat .stats-type {
-    font-size: .875rem;
-    color: #828d9f;
-    text-transform: uppercase;
-}
+    .app-card-stat .stats-type {
+        font-size: .875rem;
+        color: #828d9f;
+        text-transform: uppercase;
+    }
 
-.app-card-stat .stats-figure {
-    font-size: 2rem;
-    color: var(--ControlTextColor);
-}
+    .app-card-stat .stats-figure {
+        font-size: 2rem;
+        color: var(--ControlTextColor);
+    }
 
-.app-card-stat .stats-meta {
-    font-size: .875rem;
-    color: #828d9f;
-}
+    .app-card-stat .stats-meta {
+        font-size: .875rem;
+        color: #828d9f;
+    }
 
 .app-card-progress-list .item {
     position: relative;
     border-bottom: 1px solid var(--BorderColor);
 }
 
-.app-card-progress-list .item:hover .title {
-    color: var(--ControlTextColor);
-}
+    .app-card-progress-list .item:hover .title {
+        color: var(--ControlTextColor);
+    }
 
-.app-card-progress-list .item:last-child {
-    border: none;
-}
+    .app-card-progress-list .item:last-child {
+        border: none;
+    }
 
-.app-card-progress-list .item .title {
-    font-size: .875rem;
-    font-weight: 500;
-}
+    .app-card-progress-list .item .title {
+        font-size: .875rem;
+        font-weight: 500;
+    }
 
-.app-card-progress-list .item .meta {
-    font-size: .875rem;
-    color: #828d9f;
-}
+    .app-card-progress-list .item .meta {
+        font-size: .875rem;
+        color: #828d9f;
+    }
 
 .app-card-progress-list .item-link-mask {
     position: absolute;
@@ -1159,9 +1175,9 @@ select.form-control:focus {
     height: 100%;
 }
 
-.app-card-basic .title {
-    font-size: 1rem;
-}
+    .app-card-basic .title {
+        font-size: 1rem;
+    }
 
 .app-card .app-icon-holder {
     display: inline-block;
@@ -1175,15 +1191,15 @@ select.form-control:focus {
     border-radius: 50%;
 }
 
-.app-card .app-icon-holder.icon-holder-mono {
-    background: var(--BodyBackground);
-    color: #828d9f;
-}
+    .app-card .app-icon-holder.icon-holder-mono {
+        background: var(--BodyBackground);
+        color: #828d9f;
+    }
 
-.app-card .app-icon-holder svg {
-    width: 24px;
-    height: 24px;
-}
+    .app-card .app-icon-holder svg {
+        width: 24px;
+        height: 24px;
+    }
 
 .stat-cell {
     color: var(--TextColor);
@@ -1206,109 +1222,109 @@ select.form-control:focus {
     top: .75rem;
 }
 
-.app-card .app-card-body .app-card-actions:hover {
-    background: var(--BodyBackground);
-}
+    .app-card .app-card-body .app-card-actions:hover {
+        background: var(--BodyBackground);
+    }
 
-.app-card .app-card-body .app-card-actions .dropdown-menu {
-    font-size: .8125rem;
-}
+    .app-card .app-card-body .app-card-actions .dropdown-menu {
+        font-size: .8125rem;
+    }
 
 .app-card-doc:hover {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }
 
 .app-card-doc .app-card-thumb-holder {
-    background: var(--SecondToneBackground);
+    background: var(--CardSecondaryBackground);
     text-align: center;
     position: relative;
     height: 112px;
 }
 
-.app-card-doc .app-card-thumb-holder .app-card-thumb {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-}
-
-.app-card-doc .app-card-thumb-holder .thumb-image {
-    -webkit-opacity: .7;
-    -moz-opacity: .7;
-    opacity: .7;
-    width: 100%;
-    height: auto;
-}
-
-    .app-card-doc .app-card-thumb-holder:hover {
-        background: var(--AppCardHoverColor);
+    .app-card-doc .app-card-thumb-holder .app-card-thumb {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
     }
 
-.app-card-doc .app-card-thumb-holder:hover .thumb-image {
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-    opacity: 1;
-}
+    .app-card-doc .app-card-thumb-holder .thumb-image {
+        -webkit-opacity: .7;
+        -moz-opacity: .7;
+        opacity: .7;
+        width: 100%;
+        height: auto;
+    }
 
-.app-card-doc .app-card-thumb-holder .badge {
-    position: absolute;
-    right: .5rem;
-    top: .5rem;
-}
+    .app-card-doc .app-card-thumb-holder:hover {
+        background: var(--CardHoverColor);
+    }
 
-.app-card-doc .app-card-thumb-holder .icon-holder {
-    font-size: 40px;
-    display: inline-block;
-    margin: 0 auto;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #fff;
-    padding-top: 10px;
-}
+        .app-card-doc .app-card-thumb-holder:hover .thumb-image {
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            opacity: 1;
+        }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .pdf-file {
-    color: #da2d27;
-}
+    .app-card-doc .app-card-thumb-holder .badge {
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+    }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .text-file {
-    color: #66a0fd;
-}
+    .app-card-doc .app-card-thumb-holder .icon-holder {
+        font-size: 40px;
+        display: inline-block;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #fff;
+        padding-top: 10px;
+    }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .excel-file {
-    color: #0da95f;
-}
+        .app-card-doc .app-card-thumb-holder .icon-holder .pdf-file {
+            color: #da2d27;
+        }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .ppt-file {
-    color: #f4b400;
-}
+        .app-card-doc .app-card-thumb-holder .icon-holder .text-file {
+            color: #66a0fd;
+        }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .video-file {
-    color: #935dc1;
-}
+        .app-card-doc .app-card-thumb-holder .icon-holder .excel-file {
+            color: #0da95f;
+        }
 
-.app-card-doc .app-card-thumb-holder .icon-holder .zip-file {
-    color: var(--ControlTextColor);
-}
+        .app-card-doc .app-card-thumb-holder .icon-holder .ppt-file {
+            color: #f4b400;
+        }
+
+        .app-card-doc .app-card-thumb-holder .icon-holder .video-file {
+            color: #935dc1;
+        }
+
+        .app-card-doc .app-card-thumb-holder .icon-holder .zip-file {
+            color: var(--ControlTextColor);
+        }
 
 .app-card-doc .app-doc-title {
     font-size: .875rem;
 }
 
-.app-card-doc .app-doc-title a {
-    color: var(--ControlTextColor);
-}
+    .app-card-doc .app-doc-title a {
+        color: var(--ControlTextColor);
+    }
 
-.app-card-doc .app-doc-title.truncate {
-    max-width: calc(100% - 30px);
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+    .app-card-doc .app-doc-title.truncate {
+        max-width: calc(100% - 30px);
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
 .app-card-doc .app-doc-meta {
     font-size: .75rem;
@@ -1327,11 +1343,11 @@ select.form-control:focus {
     font-size: .875rem;
 }
 
-.app-card-orders-table .table .cell {
-    border-color: var(--BorderColor);
-    color: var(--TextColor);
-    vertical-align: middle;
-}
+    .app-card-orders-table .table .cell {
+        border-color: var(--BorderColor);
+        color: var(--TextColor);
+        vertical-align: middle;
+    }
 
 .app-card-orders-table .cell span {
     display: inline-block;
@@ -1361,24 +1377,24 @@ select.form-control:focus {
     padding: 0;
 }
 
-.app-nav-tabs .nav-link {
-    color: var(--TextColor);
-    font-size: .875rem;
-    font-weight: bold;
-}
+    .app-nav-tabs .nav-link {
+        color: var(--TextColor);
+        font-size: .875rem;
+        font-weight: bold;
+    }
 
-.app-nav-tabs .nav-link.active {
-    color: var(--PrimaryColor);
-    border-bottom: 2px solid var(--PrimaryColor);
-}
+        .app-nav-tabs .nav-link.active {
+            color: var(--PrimaryColor);
+            border-bottom: 2px solid var(--PrimaryColor);
+        }
 
-.app-nav-tabs .nav-link.active:hover {
-    background: none;
-}
+            .app-nav-tabs .nav-link.active:hover {
+                background: none;
+            }
 
-.app-nav-tabs .nav-link:hover {
-    color: var(--PrimaryColor);
-}
+        .app-nav-tabs .nav-link:hover {
+            color: var(--PrimaryColor);
+        }
 
 .app-pagination .pagination > li > a,
 .app-pagination .pagination > li > span {
@@ -1392,20 +1408,20 @@ select.form-control:focus {
     cursor: pointer;
 }
 
-.app-pagination .pagination .page-link {
-    color: var(--TextColor);
-    padding: .25rem .5rem;
-}
+    .app-pagination .pagination .page-link {
+        color: var(--TextColor);
+        padding: .25rem .5rem;
+    }
 
-.app-pagination .pagination .page-item.active .page-link {
-    background: var(--ButtonBackgroundColorActive);
-    color: var(--ButtonTextColorActive);
-    border-color: var(--ButtonBorder);
-}
+    .app-pagination .pagination .page-item.active .page-link {
+        background: var(--ButtonBackgroundColorActive);
+        color: var(--ButtonTextColorActive);
+        border-color: var(--ButtonBorder);
+    }
 
-.app-pagination .pagination .page-item.disabled .page-link {
-    color: var(--ButtonTextColorDisabled);
-}
+    .app-pagination .pagination .page-item.disabled .page-link {
+        color: var(--ButtonTextColorDisabled);
+    }
 
 .app-card-accordion .app-card-title {
     font-size: 1.125rem;
@@ -1415,11 +1431,13 @@ select.form-control:focus {
     border-radius: 0;
     border: none;
     border-bottom: 1px solid var(--BorderColor);
+    background-color: var(--CardBackground);
+    color: var(--TextColor);
 }
 
-.app-card-accordion .faq-accordion .accordion-item:last-child {
-    border-bottom: none;
-}
+    .app-card-accordion .faq-accordion .accordion-item:last-child {
+        border-bottom: none;
+    }
 
 .app-card-accordion .faq-accordion .accordion-header {
     border: none;
@@ -1437,9 +1455,9 @@ select.form-control:focus {
     color: var(--PrimaryColor);
 }
 
-.app-card-accordion .faq-accordion .accordion-button:after {
-    display: none;
-}
+    .app-card-accordion .faq-accordion .accordion-button:after {
+        display: none;
+    }
 
 .app-card-accordion .faq-accordion .accordion-body {
     padding-left: 0;
@@ -1449,26 +1467,26 @@ select.form-control:focus {
 }
 
 .add-bottom-border {
-    border-bottom: 1px solid var(--BorderColor);   
+    border-bottom: 1px solid var(--BorderColor);
 }
 
 .app-card-account {
     height: 100%;
 }
 
-.app-card-account .item {
-    font-size: .875rem;
-}
+    .app-card-account .item {
+        font-size: .875rem;
+    }
 
-.app-card-account .item .profile-image {
-    width: 60px;
-    height: 60px;
-}
+        .app-card-account .item .profile-image {
+            width: 60px;
+            height: 60px;
+        }
 
-.app-card-account .item .btn-sm, .app-card-account .item .btn-group-sm > .btn {
-    padding: .125rem .5rem;
-    font-size: .75rem;
-}
+        .app-card-account .item .btn-sm, .app-card-account .item .btn-group-sm > .btn {
+            padding: .125rem .5rem;
+            font-size: .75rem;
+        }
 
 .settings-section .section-title {
     font-size: 1.25rem;
@@ -1482,27 +1500,27 @@ select.form-control:focus {
     font-size: 1rem;
 }
 
-.app-card-settings .form-label {
-    font-weight: bold;
-}
+    .app-card-settings .form-label {
+        font-weight: bold;
+    }
 
-.app-card-settings .form-control {
-    font-size: 1rem;
-}
+    .app-card-settings .form-control {
+        font-size: 1rem;
+    }
 
 .app-404-page {
     padding-top: 2rem;
 }
 
-.app-404-page .page-title {
-    font-size: 3rem;
-    line-height: .8;
-    font-weight: bold;
-}
+    .app-404-page .page-title {
+        font-size: 3rem;
+        line-height: .8;
+        font-weight: bold;
+    }
 
-.app-404-page .page-title span {
-    font-size: 1.5rem;
-}
+        .app-404-page .page-title span {
+            font-size: 1.5rem;
+        }
 
 .chart-container {
     position: relative;
@@ -1519,9 +1537,9 @@ select.form-control:focus {
     color: var(--TextColor);
 }
 
-.app-table-hover > tbody > tr:hover {
-    background-color: var(--CardBackground);
-}
+    .app-table-hover > tbody > tr:hover {
+        background-color: var(--CardBackground);
+    }
 
 .app-card-notification .notification-type .badge {
     font-size: .65rem;
@@ -1551,7 +1569,7 @@ select.form-control:focus {
 }
 
 .app-card-notification .app-card-footer {
-    background: var(--ThirdToneBackground);
+    background: var(--CardFooter);
 }
 
 @media(min-width: 1200px) {
@@ -1614,21 +1632,21 @@ select.form-control:focus {
     z-index: 11;
 }
 
-.auth-background-overlay .overlay-title {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-}
+    .auth-background-overlay .overlay-title {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+    }
 
-.auth-background-overlay .overlay-content {
-    background: rgba(37,41,48,.6);
-    color: #fff;
-}
+    .auth-background-overlay .overlay-content {
+        background: rgba(37,41,48,.6);
+        color: #fff;
+    }
 
-.auth-background-overlay .overlay-content a {
-    text-decoration: underline;
-    color: #fff;
-}
+        .auth-background-overlay .overlay-content a {
+            text-decoration: underline;
+            color: #fff;
+        }
 
 .app-auth-footer {
     position: absolute;
@@ -1642,64 +1660,64 @@ select.form-control:focus {
     height: 100vh;
 }
 
-.app-auth-wrapper .app-auth-body {
-    width: 360px;
-}
+    .app-auth-wrapper .app-auth-body {
+        width: 360px;
+    }
 
-.app-auth-wrapper .app-logo .logo-icon {
-    width: 60px;
-    height: 60px;
-}
+    .app-auth-wrapper .app-logo .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
 
-.app-auth-wrapper .auth-heading {
-    font-size: 1.5rem;
-}
+    .app-auth-wrapper .auth-heading {
+        font-size: 1.5rem;
+    }
 
-.app-auth-wrapper .form-control::-webkit-input-placeholder {
-    color: #828d9f;
-}
+    .app-auth-wrapper .form-control::-webkit-input-placeholder {
+        color: #828d9f;
+    }
 
-.app-auth-wrapper .form-control:-moz-placeholder {
-    color: #828d9f;
-}
+    .app-auth-wrapper .form-control:-moz-placeholder {
+        color: #828d9f;
+    }
 
-.app-auth-wrapper .form-control::-moz-placeholder {
-    color: #828d9f;
-}
+    .app-auth-wrapper .form-control::-moz-placeholder {
+        color: #828d9f;
+    }
 
-.app-auth-wrapper .form-control:-ms-input-placeholder {
-    color: #828d9f;
-}
+    .app-auth-wrapper .form-control:-ms-input-placeholder {
+        color: #828d9f;
+    }
 
-.app-auth-wrapper .legal-note {
-    font-size: .875rem;
-}
+    .app-auth-wrapper .legal-note {
+        font-size: .875rem;
+    }
 
-.app-auth-wrapper .extra {
-    font-size: .75rem;
-}
+    .app-auth-wrapper .extra {
+        font-size: .75rem;
+    }
 
-.app-auth-wrapper .extra a {
-    text-decoration: underline;
-    color: #828d9f;
-}
+        .app-auth-wrapper .extra a {
+            text-decoration: underline;
+            color: #828d9f;
+        }
 
-.app-auth-wrapper .extra a:hover {
-    color: var(--TextColor);
-}
+            .app-auth-wrapper .extra a:hover {
+                color: var(--TextColor);
+            }
 
-.app-auth-wrapper .auth-heading-desc {
-    font-weight: 500;
-    font-size: 1.125rem;
-}
+    .app-auth-wrapper .auth-heading-desc {
+        font-weight: 500;
+        font-size: 1.125rem;
+    }
 
-.app-auth-wrapper .legal-note {
-    font-size: .75rem;
-}
+    .app-auth-wrapper .legal-note {
+        font-size: .75rem;
+    }
 
-.app-auth-wrapper .auth-option {
-    font-size: .875rem;
-}
+    .app-auth-wrapper .auth-option {
+        font-size: .875rem;
+    }
 
 .app-auth-footer .copyright {
     font-size: .75rem;
@@ -1748,7 +1766,72 @@ select.form-control:focus {
     border-radius: 10px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: var(--ScrollColorHover);
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--ScrollColorHover);
+    }
+
+/* Custom loader for Authorization */
+.loader,
+.loader:before,
+.loader:after {
+    background: #dd2727;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+
+.loader {
+    color: #dd2727;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+    .loader:before,
+    .loader:after {
+        position: absolute;
+        top: 0;
+        content: '';
+    }
+
+    .loader:before {
+        left: -1.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
+
+    .loader:after {
+        left: 1.5em;
+    }
+
+@-webkit-keyframes load1 {
+    0%, 80%, 100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+@keyframes load1 {
+    0%, 80%, 100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
 }
