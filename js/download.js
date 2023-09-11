@@ -14,4 +14,5 @@
     // We don't need to keep the object URL, let's release the memory
     // On older versions of Safari, it seems you need to comment this line...
     URL.revokeObjectURL(exportUrl);
+    a.remove();
 }
