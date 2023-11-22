@@ -1,7 +1,7 @@
 {
   "entryAssembly": "GithubPages",
   "resources": {
-    "hash": "sha256-U6bTbGUUBs71ahrUy941o9QqcmZIQRzbcFnmDZe9Fmc=",
+    "hash": "sha256-Pypum/+N8OfysHN9Ps5YzkfuYw8/0SLo37a3+0VkIJo=",
     "runtime": {
       "dotnet.7.0.14.ioym56jh9p.js": "sha256-RWrHzxmUe7UsaNTJ4ROUPixfbDGtKJ/UoURpU9XNSLc=",
       "dotnet.timezones.blat": "sha256-t5xviiOQTfAsF0UDhmcyalKiaehUmf/sqJl97tmPM0M=",
@@ -15,7 +15,7 @@
       "FreeDataExports.dll": "sha256-8hHiATjDsN/QH45n0JhLRL+1MN87NHZC6/QkSzy3CNo=",
       "GChartsBlazorfied.dll": "sha256-OCyxQCMdaPqwIwV55pwEuuYkxCT6D+nmgXs0pFBCNYM=",
       "GChartsDataTableBlazorfied.dll": "sha256-JGOwKGAQ8ff8RZPo2RDnAk0Dh50wE3HayItlSgr3ZPM=",
-      "GithubPages.dll": "sha256-feSc7u7GU5h5DtVsAh+q9XTzQqU8G0t39H9RYWjeZJs=",
+      "GithubPages.dll": "sha256-UiiC+CntaWZ2UXzhMwaId3X27uvdb3qfVd95Ld8uR4g=",
       "Microsoft.AspNetCore.Components.dll": "sha256-dExs5wn1lY8rvvV48YQWyHnu386Gy3H/+i6PLWiWfOg=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-r0YBuWGUlaHUh2Z23twt81FC7qrTbOMZKoaD/dgspW4=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-GthKrHcSc8uOL6XXkGQP6uGfESlsj9kHhiGlLA+w5iM=",
