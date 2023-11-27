@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GithubPages",
   "resources": {
-    "hash": "sha256-MJB2oKDV//8L2Do5N3KgHzVg1+seImp5FQcyu5UgtCM=",
+    "hash": "sha256-6cq7+uaFiAhxVO5c2yuOhoNhixPU07Ta59ipljj4OD4=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.ahr7yilaev.js": "sha256-lCZIWWraj28SzbL/4ubyA9dZ+gpcx7hO1f/iKczVOEg="
     },
@@ -21,7 +21,7 @@
       "FreeDataExports.wasm": "sha256-xRz9X24MdH8X2ZgUT3JmiCa58kxFrBx+XSEO3jUmW00=",
       "GChartsBlazorfied.wasm": "sha256-5oGrBqE28vhoxgm2u9sftmjao9ydOUK/5+PmRjBgcmw=",
       "GChartsDataTableBlazorfied.wasm": "sha256-XDcRhb9EWYoktdT/eF6VwcF7jVq9532MzVJwGEmPkd8=",
-      "GithubPages.wasm": "sha256-IQyzE1bA5bEy1rU0S4DSSg2X1xBKkW+CnNhjXezOJ9E=",
+      "GithubPages.wasm": "sha256-XtWUMHXfDV8v2zx3HNee2nLHsLfHxsj1dvwtS+cpXPo=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-1F+RXK0KaSSPkA+gEvybIPVnxy1BwsGUSFMFBr7Ngfk=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-ivj7kxN8rrhTm1UV0H7dhsOewu6rhATFU2ZAG/YKLvA=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Ws5szf6fWPAXna+XyWsAhavx+WDFcA/91DQ7iPRPCMs=",
