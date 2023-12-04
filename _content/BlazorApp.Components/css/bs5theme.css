@@ -778,15 +778,15 @@ button.close:focus {
         }
 
 .app-branding {
-    height: 60px;
+    height: 110px;
     padding-top: 1rem;
     padding-left: 1rem;
     margin-bottom: 1rem;
 }
 
     .app-branding .logo-icon {
-        width: 36px;
-        height: 36px;
+        /*width: 36px;*/
+        height: 100px;
     }
 
     .app-branding .logo-text {
