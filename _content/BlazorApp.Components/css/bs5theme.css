@@ -778,23 +778,24 @@ button.close:focus {
         }
 
 .app-branding {
-    height: 110px;
+    height: 200px;
     padding-top: 1rem;
-    padding-left: 1rem;
+    padding-left: -10px;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-    .app-branding .logo-icon {
-        /*width: 36px;*/
-        height: 100px;
-    }
+.app-branding .logo-icon {
+    /*width: 36px;*/
+    height: 150px;
+}
 
-    .app-branding .logo-text {
-        color: var(--ControlTextColor);
-        font-size: 1.25rem;
-        font-weight: 600;
-        vertical-align: middle;
-    }
+.app-branding .logo-text {
+    color: var(--ControlTextColor);
+    font-size: 1.25rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
 
 .app-nav {
     color: var(--TextColor);
