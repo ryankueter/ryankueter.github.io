@@ -780,7 +780,6 @@ button.close:focus {
 .app-branding {
     height: 200px;
     padding-top: 1rem;
-    padding-left: -10px;
     margin-bottom: 1rem;
     text-align: center;
 }
