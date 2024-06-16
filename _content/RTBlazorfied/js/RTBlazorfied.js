@@ -979,7 +979,7 @@ class RTBlazorfied {
         }
     }
     removeTextDecoration(element, decoration) {
-        if (this.styleCount(element) > 1) {
+        if (this.getUserDefinedStyleCount(element) > 1) {
             var currentDecorations = element.style.textDecoration.split(' ');
 
             // Remove the specified decoration
@@ -1002,31 +1002,6 @@ class RTBlazorfied {
                 element.removeAttribute("style");
             }
         }
-    }
-
-    styleCount(el) {
-        if (el == null) {
-            return null;
-        }
-        let n = 0;
-
-        if (el.style != null) {
-            if (el.style.fontWeight == "bold") { n++; }
-            if (el.style.fontStyle == "italic") { n++; }
-            if (el.style.textDecoration.includes("underline")) { n++; }
-            if (el.style.textDecoration.includes("line-through")) { n++; }
-            if (el.style.verticalAlign == "sub") { n++; }
-            if (el.style.verticalAlign == "super") { n++; }
-            if (el.style.textAlign == "left") { n++; }
-            if (el.style.textAlign == "center") { n++; }
-            if (el.style.textAlign == "right") { n++; }
-            if (el.style.textAlign == "justify") { n++; }
-            if (el.style.textIndent == "40px") { n++; }
-            if (el.style.fontFamily != null) { n++; }
-            if (el.style.fontSize != null) { n++; }
-            if (el.style.color != null) { n++; }
-        }
-        return n;
     }
 
     getUserDefinedStyles(element) {
