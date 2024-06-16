@@ -967,7 +967,7 @@ class RTBlazorfied {
             element.style.removeProperty(property, value);
         }
         else {
-            if (element.nodeName == "SPAN" || element.nodeName == "DIV") {
+            if (element.nodeName == "SPAN") {
                 if (element.childElementCount == 0) {
                     element.replaceWith(element.textContent);
                 }
@@ -1098,7 +1098,13 @@ class RTBlazorfied {
             /* Recurse into the closest node and return it */
             if (el.nodeName != "#text" && el.nodeName != "#document") {
 
-                /* See if the selection contains a list item and return the list */
+                /* Check if a style element exists  */
+                var e = this.getElementByStyle(el, type);
+                if (e != null) {
+                    return e;
+                }
+
+                /* Check if the selection contains a list item and return the list */
                 if (el.nodeName === 'LI') {
                     return el.parentNode;
                 }
@@ -1106,11 +1112,6 @@ class RTBlazorfied {
                 /* Match the text, or get the element by the style */
                 if (this.shadowRoot.getSelection().toString() == el.textContent) {
                     return el;
-                }
-
-                var e = this.getElementByStyle(el, type);
-                if (e != null) {
-                    return e;
                 }
             }
 
