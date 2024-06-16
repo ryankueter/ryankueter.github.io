@@ -1030,14 +1030,28 @@ class RTBlazorfied {
         return styles;
     }
 
-    /* Get the number of styles on an individual element */
     getUserDefinedStyleCount(element) {
-        let n = 0;
+        let c = 0;
 
         for (let i = 0; i < element.style.length; i++) {
-            n++;
+            let property = element.style[i];
+            let value = element.style.getPropertyValue(property);
+
+            /* Filter out the initual values, e.g., <h1> */
+            if (value != "initial") {
+                var words = value.split(' ');
+                if (words.length > 1) {
+                    for (let i = 0; i < words.length; i++) {
+                        c++;
+                    }
+                }
+                else {
+                    c++;
+                }
+            }
         }
-        return n;
+
+        return c;
     }
 
     /* Get an element by type */
