@@ -605,7 +605,7 @@ class RTBlazorfied {
                 }
             }
             else {
-                element = this.getElementByContent(sel.anchorNode);
+                element = this.getElementByContent(sel.anchorNode, type);
             }
             if (element != null) {
                 
@@ -728,11 +728,18 @@ class RTBlazorfied {
             
             var element;
             if (sel.toString().length == 0) {
-                element =  this.getElement(sel.anchorNode);
+                /* Check if a node exists with this style and get it */
+                element = this.getElementByStyle(sel.anchorNode, type);
+
+                /* If that node does not exist, style the parent node */
+                if (element == null) {
+                    element = sel.anchorNode.parentNode;
+                }
             }
             else {
-                element = this.getElementByContent(sel.anchorNode);
+                element = this.getElementByContent(sel.anchorNode, type);
             }
+            
             if (element != null) {
                 switch (type) {
                     case "textcolor":
@@ -857,6 +864,7 @@ class RTBlazorfied {
                 //    sel.removeAllRanges();
                 //    sel.addRange(range);
                 //}
+                this.removeEmptyNodes();
                 this.selectButtons(sel.anchorNode);
                 this.restorestate();
                 return;
@@ -936,12 +944,13 @@ class RTBlazorfied {
                 }
             }
         }
+        this.removeEmptyNodes();
         this.selectButtons(sel.anchorNode);
         this.restorestate();
     }
     removeProperty(element, property, value) {
         // This should more generally consider all the styles
-        if (this.styleCount(element) > 1) {
+        if (this.getUserDefinedStyleCount(element) > 1) {
             element.style.removeProperty(property, value);
         }
         else {
@@ -952,14 +961,6 @@ class RTBlazorfied {
                 else {
                     element.insertAdjacentHTML("afterend", element.innerHTML);
                     element.remove();
-
-                    //var fragment = document.createDocumentFragment();
-
-                    //while (element.firstChild) {
-                    //    fragment.appendChild(element.firstChild);
-                    //}
-                    //element.parentNode.insertBefore(fragment, element);
-                    //element.parentNode.removeChild(element);
                 }
             }
             else {
@@ -994,13 +995,6 @@ class RTBlazorfied {
             else if (element.nodeName == "SPAN") {
                 element.insertAdjacentHTML("afterend", element.innerHTML);
                 element.remove();
-                //var fragment = document.createDocumentFragment();
-
-                //while (element.firstChild) {
-                //    fragment.appendChild(element.firstChild);
-                //}
-                //element.parentNode.insertBefore(fragment, element);
-                //element.parentNode.removeChild(element);
             }
             else {
                 // No more styles. Since, this element may be required
@@ -1010,14 +1004,13 @@ class RTBlazorfied {
         }
     }
 
-    // Gets the number of styles existing in an element
     styleCount(el) {
         if (el == null) {
             return null;
         }
         let n = 0;
 
-        if (el.nodeName != "#text" || el.nodeName != "#document") {
+        if (el.style != null) {
             if (el.style.fontWeight == "bold") { n++; }
             if (el.style.fontStyle == "italic") { n++; }
             if (el.style.textDecoration.includes("underline")) { n++; }
@@ -1036,6 +1029,29 @@ class RTBlazorfied {
         return n;
     }
 
+    getUserDefinedStyles(element) {
+        let styles = {};
+
+        for (let i = 0; i < element.style.length; i++) {
+            let property = element.style[i];
+            let value = element.style.getPropertyValue(property);
+
+            styles[property] = value;
+        }
+
+        return styles;
+    }
+
+    /* Get the number of styles on an individual element */
+    getUserDefinedStyleCount(element) {
+        let n = 0;
+
+        for (let i = 0; i < element.style.length; i++) {
+            n++;
+        }
+        return n;
+    }
+
     /* Get an element by type */
     getElementByType(el, type) {
         if (el == null) {
@@ -1048,7 +1064,7 @@ class RTBlazorfied {
                 break;
             }
 
-            // Recurse into the closest node and return it
+            /* Recurse into the closest node and return it */
             if (el.nodeName != "#text" && el.nodeName != "#document") {
                 switch (type) {
                     case "Format":
@@ -1080,7 +1096,7 @@ class RTBlazorfied {
     }
 
     /* Get an element by matching content */
-    getElementByContent(el) {
+    getElementByContent(el, type) {
         if (el == null) {
             return null;
         }
@@ -1091,10 +1107,18 @@ class RTBlazorfied {
                 break;
             }
 
-            // Recurse into the closest node and return it
+            /* Recurse into the closest node and return it */
             if (el.nodeName != "#text" && el.nodeName != "#document") {
+
+                /* Match the text, or get the element by the style */
                 if (this.shadowRoot.getSelection().toString() == el.textContent) {
                     return el;
+                }
+                else {
+                    var e = this.getElementByStyle(el, type);
+                    if (e != null) {
+                        return e;
+                    }
                 }
             }
 
@@ -1104,21 +1128,85 @@ class RTBlazorfied {
         return null;
     }
     /* Get an element by style */
-    getElement(el) {
+    getElementByStyle(el, type) {
         if (el == null) {
             return null;
         }
 
         while (el) {
+            
+
             /* Prevent recursion outside the editor */
             if (el.nodeName == 'DIV' && el.id == this.id) {
                 break;
             }
-            if (el.nodeName != "#text" && el.nodeName != "#document") {
+            if (el.style != null) {
 
-                return el;
+                switch (type) {
+                    case "textcolor":
+                        return el;
+                    case "font":
+                        return el;
+                    case "size":
+                        return el;
+                    case "bold":
+                        if (el.style.fontWeight != null && el.style.fontWeight == "bold") {
+                            return el;
+                        }
+                        break;
+                    case "italic":
+                        if (el.style.fontStyle != null && el.style.fontStyle == "italic") {
+                            return el;
+                        }
+                        break;
+                    case "underline":
+                        if (el.style.textDecoration != null && el.style.textDecoration.includes("underline")) {
+                            return el;
+                        }
+                        break;
+                    case "line-through":
+                        if (el.style.textDecoration != null && el.style.textDecoration.includes("line-through")) {
+                            return el;
+                        }
+                        break;
+                    case "subscript":
+                        if (el.style.verticalAlign != null && el.style.verticalAlign == "sub") {
+                            return el;
+                        }
+                        break;
+                    case "superscript":
+                        if (el.style.verticalAlign != null && el.style.verticalAlign == "superscript") {
+                            return el;
+                        }
+                        break;
+                    case "alignleft":
+                        if (el.style.textAlign != null && el.style.textAlign == "left") {
+                            return el;
+                        }
+                        break;
+                    case "aligncenter":
+                        if (el.style.textAlign != null && el.style.textAlign == "center") {
+                            return el;
+                        }
+                        break;
+                    case "alignright":
+                        if (el.style.textAlign != null && el.style.textAlign == "right") {
+                            return el;
+                        }
+                        break;
+                    case "alignjustify":
+                        if (el.style.textAlign != null && el.style.textAlign == "justify") {
+                            return el;
+                        }
+                        break;
+                    case "indent":
+                        if (el.style.textIndent != null && el.style.textIndent != null) {
+                            return el;
+                        }
+                        break;
+                }
             }
-
+            
             el = el.parentNode;
         }
 
