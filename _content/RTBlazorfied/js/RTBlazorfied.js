@@ -12,7 +12,7 @@ class RTBlazorfied {
         this.init();
     }
 
-    init() {
+    init = () => {
         var isolatedContainer = document.getElementById(this.shadow_id);
         this.shadowRoot = isolatedContainer.attachShadow({ mode: 'open' });
 
@@ -60,11 +60,11 @@ class RTBlazorfied {
             });
         });
     }
-    format(format) {
+    format = (format) => {
         this.formatNode(format);
         this.closeDropdown("blazing-rich-text-format-button-dropdown");
     }
-    dropdown(id) {
+    dropdown = (id) => {
         var el = this.shadowRoot.getElementById(id);
         if (el != null && el.classList.contains("rich-text-box-show")) {
             el.classList.remove("rich-text-box-show")
@@ -73,8 +73,9 @@ class RTBlazorfied {
             this.closeDropdowns();
             el.classList.add("rich-text-box-show")
         }
+        this.focusEditor();
     }
-    openTextColorPicker() {
+    openTextColorPicker = () => {
         this.lockToolbar = true;
         var selection = this.shadowRoot.getSelection();
         if (selection != null && selection.toString().length > 0) {
@@ -85,62 +86,62 @@ class RTBlazorfied {
         colorPickerDropdown.style.display = colorPickerDropdown.style.display === 'block' ? 'none' : 'block';
         
     }
-    selectTextColor(color) {
+    selectTextColor = (color) => {
         this.updateNode("textcolor", color);
 
         var colorPickerDropdown = this.shadowRoot.getElementById('blazing-rich-text-textcolor-dropdown');
         colorPickerDropdown.style.display = 'none';
         this.lockToolbar = false;
     }
-    removeTextColor() {
+    removeTextColor = () => {
         this.updateNode("textcolor", "None");
 
         var colorPickerDropdown = this.shadowRoot.getElementById('blazing-rich-text-textcolor-dropdown');
         colorPickerDropdown.style.display = 'none';
         this.lockToolbar = false;
     }
-    font(style) {
+    font = (style) => {
         this.updateNode("font", style);
         this.closeDropdown("blazing-rich-text-font-button-dropdown");
     }
-    size(size) {
+    size = (size) => {
         this.updateNode("size", size);
         this.closeDropdown("blazing-rich-text-size-button-dropdown");
     }
-    bold() {
+    bold = () => {
         this.updateNode("bold");
     }
-    italic() {
+    italic = () => {
         this.updateNode("italic");
     }
-    underline() {
+    underline = () => {
         this.updateNode("underline");
     };
-    strikethrough() {
+    strikethrough = () => {
         this.updateNode("line-through");
     };
-    subscript() {
+    subscript = () => {
         this.updateNode("subscript");
     };
-    superscript() {
+    superscript = () => {
         this.updateNode("superscript");
     };
-    alignleft() {
+    alignleft = () => {
         this.updateNode("alignleft");
     };
-    aligncenter() {
+    aligncenter = () => {
         this.updateNode("aligncenter");
     };
-    alignright() {
+    alignright = () => {
         this.updateNode("alignright");
     };
-    alignjustify() {
+    alignjustify = () => {
         this.updateNode("alignjustify");
     };
-    indent() {
+    indent = () => {
         this.updateNode("indent");
     };
-    copy() {
+    copy = () => {
         this.backupstate();
 
         var selection = window.getSelection();
@@ -151,8 +152,9 @@ class RTBlazorfied {
         }
 
         this.restorestate();
+        this.focusEditor();
     };
-    cut() {
+    cut = () => {
         this.backupstate();
 
         var selection = window.getSelection();
@@ -167,15 +169,17 @@ class RTBlazorfied {
         }
 
         this.restorestate();
+        this.focusEditor();
     };
 
-    closeDropdown(id) {
+    closeDropdown = (id) => {
         var e = this.shadowRoot.getElementById(id);
         e.classList.remove("rich-text-box-show");
         this.lockToolbar = false;
+        this.focusEditor();
     }
 
-    removeEmptyNodes() {
+    removeEmptyNodes = () => {
         var div = this.shadowRoot.getElementById(this.id);
 
         if (div) {
@@ -197,34 +201,37 @@ class RTBlazorfied {
         this.selectButtons(div);
     };
 
-    delete() {
+    delete = () => {
         this.backupstate();
 
         window.getSelection().deleteFromDocument();
         this.removeEmptyNodes();
 
+        this.restorestate();
+        this.focusEditor();
+    };
+    focusEditor = () => {
         /* Return focus to editor */
         var div = this.shadowRoot.getElementById(this.id);
         div.focus();
-
-        this.restorestate();
-    };
-    selectall() {
+    }
+    selectall = () => {
         var range = document.createRange();
         range.selectNodeContents(this.content)
         var sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
+        this.focusEditor();
     };
 
-    orderedlist() {
+    orderedlist = () => {
         this.addlist("OL");
     };
 
-    unorderedlist() {
+    unorderedlist = () => {
         this.addlist("UL");
     };
-    addlist(type) {
+    addlist = (type) => {
         this.backupstate();
 
         /* Get the selected text */
@@ -287,10 +294,11 @@ class RTBlazorfied {
                     selection.addRange(range);
                 }
             }
-        }        
+        }
         this.restorestate();
+        this.focusEditor();
     }
-    replaceList(list, type) {
+    replaceList = (list, type) => {
         var olElement = document.createElement(type);
 
         while (list.firstChild) {
@@ -308,7 +316,7 @@ class RTBlazorfied {
             selection.addRange(range);
         }
     }
-    removelist(list) {
+    removelist = (list) => {
 
         /* Get the current selection */
         var range = document.createRange();
@@ -343,7 +351,7 @@ class RTBlazorfied {
             selection.addRange(range);
         }
     }
-    openLinkDialog() {
+    openLinkDialog = () => {
         this.resetLinkDialog();
 
         var selection = this.shadowRoot.getSelection();
@@ -384,7 +392,7 @@ class RTBlazorfied {
             address.focus();
         }
     }
-    moveCursorToStart() {
+    moveCursorToStart = () => {
         var el = this.shadowRoot.getElementById(this.id);
         var range = document.createRange();
         var selection = window.getSelection();
@@ -403,7 +411,7 @@ class RTBlazorfied {
         var selection = this.shadowRoot.getSelection();
         return selection.getRangeAt(0).cloneRange();
     }
-    resetLinkDialog() {
+    resetLinkDialog = () => {
         var linktext = this.shadowRoot.getElementById("rich-text-box-linktext");
         linktext.value = null;
 
@@ -413,7 +421,7 @@ class RTBlazorfied {
         var newtab = this.shadowRoot.getElementById("rich-text-box-link-modal-newtab");
         newtab.checked = false;
     }
-    insertLink() {
+    insertLink = () => {
         this.backupstate();
         var linktext = this.shadowRoot.getElementById("rich-text-box-linktext");
         var link = this.shadowRoot.getElementById("rich-text-box-link-webaddress");
@@ -450,8 +458,9 @@ class RTBlazorfied {
         }
         this.restorestate();
         this.closeLinkDialog();
+        this.focusEditor();
     }
-    removeLink() {
+    removeLink = () => {
         this.backupstate();
 
         var selection = this.shadowRoot.getSelection();
@@ -474,12 +483,13 @@ class RTBlazorfied {
             }
         }
         this.restorestate();
+        this.focusEditor();
     }
-    closeLinkDialog() {
+    closeLinkDialog = () => {
         var e = this.shadowRoot.getElementById("rich-text-box-link-modal");
         e.style.display = "none";
     }
-    openImageDialog() {
+    openImageDialog = () => {
         this.resetImageDialog();
 
         var selection = this.shadowRoot.getSelection();
@@ -498,7 +508,7 @@ class RTBlazorfied {
             address.focus();
         }
     }
-    resetImageDialog() {
+    resetImageDialog = () => {
         this.imageSelection = null;
 
         var address = this.shadowRoot.getElementById("rich-text-box-image-webaddress");
@@ -513,7 +523,7 @@ class RTBlazorfied {
         var alt = this.shadowRoot.getElementById("rich-text-box-image-alt-text");
         alt.value = null;
     }
-    insertImage() {
+    insertImage = () => {
         this.backupstate();
         var address = this.shadowRoot.getElementById("rich-text-box-image-webaddress");
         var width = this.shadowRoot.getElementById("rich-text-box-image-width");
@@ -554,35 +564,38 @@ class RTBlazorfied {
 
         this.restorestate();
         this.closeImageDialog();
+        this.focusEditor();
     }
-    closeImageDialog() {
+    closeImageDialog = () => {
         var e = this.shadowRoot.getElementById("rich-text-box-image-modal");
         e.style.display = "none";
     }
 
-    undo() {
+    undo = () => {
         if (this.undoContent != null) {
             this.content.innerHTML = this.undoContent;
         }
+        this.focusEditor();
     }
-    redo() {
+    redo = () => {
         if (this.redoContent != null) {
             this.content.innerHTML = this.redoContent;
         }
+        this.focusEditor();
     }
-    restorestate() {
+    restorestate = () => {
         var html = this.content?.innerHTML;
         if (html != null) {
             this.redoContent = html;
         }
     }
-    backupstate() {
+    backupstate = () => {
         var html = this.content?.innerHTML;
         if (html != null) {
             this.undoContent = html;
         }
     }
-    saveSelection() {
+    saveSelection = () => {
         var selection = this.shadowRoot.getSelection();
         if (selection.rangeCount > 0) {
             const range = selection.getRangeAt(0);
@@ -596,7 +609,7 @@ class RTBlazorfied {
         return null;
     }
 
-    restoreSelection(savedSelection) {
+    restoreSelection = (savedSelection) => {
         if (!savedSelection) return;
 
         var selection = this.shadowRoot.getSelection();
@@ -607,7 +620,7 @@ class RTBlazorfied {
         selection.removeAllRanges();
         selection.addRange(range);
     }
-    formatNode(type) {
+    formatNode = (type) => {
         var sel, range;
 
         this.backupstate();       
@@ -708,8 +721,9 @@ class RTBlazorfied {
         }
         this.closeDropdowns();
         this.restorestate();
+        this.focusEditor();
     }
-    isFormatElement(element) {
+    isFormatElement = (element) => {
         if (element.nodeName == "P"
             || element.nodeName == "H1"
             || element.nodeName == "H2"
@@ -719,7 +733,7 @@ class RTBlazorfied {
             return true;
         }
     }
-    closeDropdowns() {
+    closeDropdowns = () => {
         this.lockToolbar = false;
 
         /* Close the Dropdowns */
@@ -730,7 +744,7 @@ class RTBlazorfied {
             }
         });
     }
-    updateNode(type, value) {
+    updateNode = (type, value) => {
         var sel, range;
 
         this.backupstate();
@@ -894,6 +908,7 @@ class RTBlazorfied {
                 this.removeEmptyNodes();
                 this.selectButtons(sel.anchorNode);
                 this.restorestate();
+                this.focusEditor();
                 return;
             }
 
@@ -974,8 +989,9 @@ class RTBlazorfied {
         this.removeEmptyNodes();
         this.selectButtons(sel.anchorNode);
         this.restorestate();
+        this.focusEditor();
     }
-    removeProperty(element, property, value) {
+    removeProperty = (element, property, value) => {
         /* This should more generally consider all the styles */
         if (this.getUserDefinedStyleCount(element) > 1) {
             element.style.removeProperty(property, value);
@@ -995,7 +1011,7 @@ class RTBlazorfied {
             }
         }
     }
-    addTextDecoration(element, decoration) {
+    addTextDecoration = (element, decoration) => {
         var currentDecorations = element.style.textDecoration;
 
         /* Check if the decoration is already applied */
@@ -1005,7 +1021,7 @@ class RTBlazorfied {
             element.style.textDecoration = newDecorations;
         }
     }
-    removeTextDecoration(element, decoration) {
+    removeTextDecoration = (element, decoration) => {
         if (this.getUserDefinedStyleCount(element) > 1) {
             var currentDecorations = element.style.textDecoration.split(' ');
 
@@ -1031,7 +1047,7 @@ class RTBlazorfied {
         }
     }
 
-    getUserDefinedStyles(element) {
+    getUserDefinedStyles = (element) => {
         let styles = {};
 
         for (let i = 0; i < element.style.length; i++) {
@@ -1044,7 +1060,7 @@ class RTBlazorfied {
         return styles;
     }
 
-    getUserDefinedStyleCount(element) {
+    getUserDefinedStyleCount = (element) => {
         let c = 0;
 
         for (let i = 0; i < element.style.length; i++) {
@@ -1069,7 +1085,7 @@ class RTBlazorfied {
     }
 
     /* Get an element by type */
-    getElementByType(el, type) {
+    getElementByType = (el, type) => {
         if (el == null) {
             return null;
         }
@@ -1112,7 +1128,7 @@ class RTBlazorfied {
     }
 
     /* Get an element by matching content */
-    getElementByContent(el, type) {
+    getElementByContent = (el, type) => {
         if (el == null) {
             return null;
         }
@@ -1149,7 +1165,7 @@ class RTBlazorfied {
         return null;
     }
     /* Get an element by style */
-    getElementByStyle(el, type) {
+    getElementByStyle = (el, type) => {
         if (el == null) {
             return null;
         }
@@ -1233,18 +1249,20 @@ class RTBlazorfied {
 
         return null;
     }
-    getHtml() {
+    getHtml = () => {
         var html = this.html();
         this.loadInnerText(html);
+        this.focusEditor();
     };
-    getCode() {
+    getCode = () => {
         var plaintext = this.plaintext();
         this.loadHtml(plaintext);
+        this.focusEditor();
     };
-    html() {
+    html = () => {
         return this.content.innerHTML;
     };
-    loadHtml(html) {
+    loadHtml = (html) => {
         var element = this.content;
         element.style.fontFamily = 'Arial, sans-serif';
         if (html != null) {
@@ -1253,9 +1271,12 @@ class RTBlazorfied {
         else {
             element.innerHTML = "";
         }
-        this.selectButtons(element);
+        if (this.IsLoaded) {
+            this.selectButtons(element);
+        }
+        this.IsLoaded = true;
     };
-    loadInnerText(text) {
+    loadInnerText = (text) => {
         var element = this.content;
         element.style.fontFamily = 'Consolas';
         if (text != null) {
@@ -1266,14 +1287,13 @@ class RTBlazorfied {
         }
         this.selectButtons(element);
     };
-    plaintext() {
+    plaintext = () => {
         var element = this.content;
         return element.innerText || element.textContent;
     };
 
-
     /* Search up the elements */
-    selectButtons(el) {
+    selectButtons = (el) => {
         if (el == null || this.lockToolbar == true) {
             return null;
         }
@@ -1424,18 +1444,18 @@ class RTBlazorfied {
             el = el.parentNode;
         }
 
-        return null;
+        this.focusEditor();
     }
 }
 
 let RTBlazorfied_Instances = {};
 
-function RTBlazorfied_Initialize(id, shadow_id, toolbar_id, styles, html) {
+window.RTBlazorfied_Initialize = (id, shadow_id, toolbar_id, styles, html) => {
     RTBlazorfied_Instances[id] = new RTBlazorfied(id, shadow_id, toolbar_id, styles);
     RTBlazorfied_Instances[id].loadHtml(html);
 }
 
-function RTBlazorfied_Method(methodName, id, param) {
+window.RTBlazorfied_Method = (methodName, id, param) => {
     var editorInstance = RTBlazorfied_Instances[id];
     if (editorInstance && typeof editorInstance[methodName] === 'function') {
         if (param != null) {
