@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "GithubPages",
   "resources": {
-    "hash": "sha256-cI5tYaPECMKAM6wMqAweH4AL7kZfAFYHlz9x9Y76pq8=",
+    "hash": "sha256-lgEA8ybCGT4J84Z3EJMWd6ic05ZcOLlBZPbCUzMjw9A=",
     "jsModuleNative": {
-      "dotnet.native.8.0.6.nnd56wqn8r.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
+      "dotnet.native.8.0.6.ahr7yilaev.js": "sha256-3rHmxPlH4EDA5iuN7FbSnvuLNervPt0tKE6KST2AflY="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.6.w5aljewpba.js": "sha256-+E96dgYQl8OrHQb4yNZ7QwNr3SZzLSP8lwKRzwSiMsw="
+      "dotnet.runtime.8.0.6.cfhqwq2l7j.js": "sha256-+E96dgYQl8OrHQb4yNZ7QwNr3SZzLSP8lwKRzwSiMsw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-QvXWDxAxKcwrwr5J00t53OFtgShscemIYbvFu+ry5Ug="
+      "dotnet.native.wasm": "sha256-Gja2pPFAwR9KLpaUlRLlHPScotS+TNFeIC3VeVtIw+s="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -20,7 +20,7 @@
       "BlazorApp.Components.wasm": "sha256-9F5be/7k5GwwZ8fzd/EUiQvTdO3oo+NIYqNNkw0BWKY=",
       "FreeDataExports.wasm": "sha256-xRz9X24MdH8X2ZgUT3JmiCa58kxFrBx+XSEO3jUmW00=",
       "GChartsBlazorfied.wasm": "sha256-+CDDdRnEPM54Kbi4GcyHguHjEaeSVXfsUOMPM9Rn0kA=",
-      "GithubPages.wasm": "sha256-mPxvxS+ssRVLlXn9o0dGRZQAZtREdXq358jaUqq8Wv0=",
+      "GithubPages.wasm": "sha256-7u2L6aT1PTmDog8lcWXCipPyK1g5F0aDB0xjbDPBPM0=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-r7yNzADf0rcaYLisB8x+IeJTmkwB5OoGeEBUSNHMP8Q=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-ivj7kxN8rrhTm1UV0H7dhsOewu6rhATFU2ZAG/YKLvA=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Ws5szf6fWPAXna+XyWsAhavx+WDFcA/91DQ7iPRPCMs=",
@@ -37,7 +37,7 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-CQVLCKiSxLN5ghyJZG3mhnMGRROdqrbNUjtAXB0nWb8=",
       "ObjectTrackers.wasm": "sha256-EEb+DRUVZwDU6FsS1XT+eAsaFScNpPeCj++rzQpZIKU=",
       "QuickPaginator.wasm": "sha256-6atAtrTO7VbR0WqhchDrUPPbMsAe4shEz6L05B/Cvfs=",
-      "RTBlazorfied.wasm": "sha256-5lRxclJcdhI0mCxnHQN+NANGHARUm7iXTYkslYVAY1Q=",
+      "RTBlazorfied.wasm": "sha256-JSLu7I/ZiM/o01b4sTslvBocACPe1RPEAlv/FEsshR8=",
       "System.Collections.Concurrent.wasm": "sha256-iL/6DpDXtkphQ7tgwkmAzXrB/HZKGRCFzo/CV4kQwMM=",
       "System.Collections.Specialized.wasm": "sha256-DfmeWbFblnUP69F68V6TlKu+SIRh/Fuq+zT584CwRQQ=",
       "System.Collections.wasm": "sha256-/FRstgJucQdqKQCCeomikJa70qBDeq+Tv3drssDcFOA=",
