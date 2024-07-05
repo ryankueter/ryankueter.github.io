@@ -1250,6 +1250,7 @@ class RTBlazorfied {
             }
                         
             if (element != null && element.parentNode != null && this.content.contains(element.parentNode)) {
+
                 if (type == "none") {
                     while (element.firstChild) {
                         element.parentNode.insertBefore(element.firstChild, element);
@@ -1278,7 +1279,7 @@ class RTBlazorfied {
                     }
                     element.parentNode.replaceChild(newElement, element);
 
-                    if (sel.anchorNode != null && sel.rangeCount != 0) {
+                    if (sel != null && sel.rangeCount > 0) {
                         var range = document.createRange();
                         range.selectNodeContents(newElement);
                         sel.removeAllRanges();
