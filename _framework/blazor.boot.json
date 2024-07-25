@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GithubPages",
   "resources": {
-    "hash": "sha256-EZBxtNErlGK945hRXTA6TrEQflQcTwuH3ZdN27eyqRg=",
+    "hash": "sha256-8PshxOoehDVxp2fdh2VZ3WHLBJvh+Wv3+GcGPhG4tM8=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.ahr7yilaev.js": "sha256-3rHmxPlH4EDA5iuN7FbSnvuLNervPt0tKE6KST2AflY="
     },
@@ -20,7 +20,7 @@
       "BlazorApp.Components.wasm": "sha256-i15N8SFIqmnEhD+pUZgI0u+d7seX6ASsMCiU24+VCss=",
       "FreeDataExports.wasm": "sha256-xRz9X24MdH8X2ZgUT3JmiCa58kxFrBx+XSEO3jUmW00=",
       "GChartsBlazorfied.wasm": "sha256-+CDDdRnEPM54Kbi4GcyHguHjEaeSVXfsUOMPM9Rn0kA=",
-      "GithubPages.wasm": "sha256-0foiTZU2/+Jh2+FvSRUFNI+9JLFlbUtxyuoKuInLc78=",
+      "GithubPages.wasm": "sha256-litguZD+uMp7jgqG4RSCf4zS7nBbGgi2DQP3xUZgIHU=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-qxuTBq2WQA3AEWZqo8RIctpKHkl+naOrUHPk45eonsQ=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-2Nc52xPm6AAtLy8IOvelSz2P5TBQN5mNmSng7M/1YBE=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Ws5szf6fWPAXna+XyWsAhavx+WDFcA/91DQ7iPRPCMs=",
