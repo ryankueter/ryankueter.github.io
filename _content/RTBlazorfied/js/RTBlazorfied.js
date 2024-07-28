@@ -45,7 +45,7 @@ class RTBlazorfied {
         this.ImageDialog = new RTBlazorfiedImageDialog(this.shadowRoot, this.content, this.Utilities);
 
         /* Initialize Upload Image Dialog - removed to prevent abuse. */
-        /* this.UploadImageDialog = new RTBlazorfiedUploadImageDialog(this.shadowRoot, this.content); */
+        this.UploadImageDialog = new RTBlazorfiedUploadImageDialog(this.shadowRoot, this.content, this.Utilities); 
 
         /* Initialize Blockquote Dialog */
         this.BlockQuoteDialog = new RTBlazorfiedBlockQuoteDialog(this.shadowRoot, this.content, this.Utilities);
@@ -360,6 +360,10 @@ class RTBlazorfied {
             event.preventDefault();
             this.format("h6");
         }
+        if (event.ctrlKey && event.shiftKey && event.key === 'V') {
+            event.preventDefault();
+            this.openPreview();
+        }
         if (event.shiftKey && event.key === 'Tab') {
             event.preventDefault();
             this.decreaseIndent();
@@ -428,6 +432,61 @@ class RTBlazorfied {
             this.fontSize -= 1;
         }
         this.NodeManager.updateNode("size", `${this.fontSize}px`);
+    }
+    openPreview = () => {
+        this.EditMode = false;
+        let previewWindow;
+        this.preview = document.getElementById(`${this.id}_Preview`);
+        const allNodes = this.preview.querySelectorAll('*');
+        allNodes.forEach(node => {
+            if (node.id === 'rich-text-box-preview') {
+                previewWindow = node;
+            }
+        });
+
+        if (previewWindow) {
+            this.loadPreviewWindow(previewWindow);
+            this.preview.show();
+            previewWindow.scrollTop = 0;
+        }
+    }
+    loadPreviewWindow = (previewWindow) => {
+        if (this.content.style.display === "block") {
+            const html = this.html();
+            if (html) {
+                previewWindow.innerHTML = html;
+            }
+            else {
+                previewWindow.innerHTML = "";
+            }
+        }
+        else {
+            const html = this.source.value;
+            if (html) {
+                previewWindow.innerHTML = html;
+            }
+            else {
+                previewWindow.innerHTML = "";
+            }
+        }
+        
+        this.NodeManager.clearButtons();
+        this.enablePreview();
+    }
+    closePreview = () => {
+        this.EditMode = true;
+        this.disablePreview();
+        this.preview.close();
+    }
+    enablePreview = () => {
+        this.shadowRoot.getElementById('blazing-rich-text-source').disabled = true;
+        this.disableButtons();
+    }
+    disablePreview = () => {
+        this.shadowRoot.getElementById('blazing-rich-text-source').disabled = false;
+        if (this.content.style.display === "block") {
+            this.enableButtons();
+        }
     }
     format = (format) => {
         this.NodeManager.formatNode(format);
@@ -787,8 +846,6 @@ class RTBlazorfied {
         if (btn.classList.contains("selected")) {
             btn.classList.remove("selected");
         }
-
-        this.content.style.fontFamily = 'Arial, sans-serif';
         if (html != null) {
             this.content.innerHTML = html;
         }
@@ -803,8 +860,6 @@ class RTBlazorfied {
         /* Toggle the button */
         const btn = this.shadowRoot.getElementById("blazing-rich-text-source");
         btn.classList.add("selected");
-
-        this.source.style.fontFamily = 'Consolas, monospace';
         if (text != null) {
             this.source.value = text;
         }
@@ -847,9 +902,6 @@ class RTBlazorfiedStateManager {
                             this.saveState();
                             break;
                         case 'characterData':
-                            this.saveState();
-                            break;
-                        case 'subtree':
                             this.saveState();
                             break;
                     }
@@ -2914,6 +2966,9 @@ class RTBlazorfiedTableDialog {
                 columns.value = this.getColumns(table);
                 columns.disabled = true;
 
+                const width = this.shadowRoot.getElementById("rich-text-box-table-width");
+                width.value = table.style.width;
+
                 const classes = this.shadowRoot.getElementById("rich-text-box-table-classes");
                 if (classes != null) {
                     const classList = table.classList;
@@ -2969,6 +3024,9 @@ class RTBlazorfiedTableDialog {
         columns.value = null;
         columns.disabled = false;
 
+        const width = this.shadowRoot.getElementById("rich-text-box-table-width");
+        width.value = null;
+
         const classes = this.shadowRoot.getElementById("rich-text-box-table-classes");
         if (classes != null) {
             classes.value = null;
@@ -2978,6 +3036,7 @@ class RTBlazorfiedTableDialog {
     insertTable = () => {
         const rows = this.shadowRoot.getElementById("rich-text-box-table-rows");
         const columns = this.shadowRoot.getElementById("rich-text-box-table-columns");
+        const width = this.shadowRoot.getElementById("rich-text-box-table-width");
         const classes = this.shadowRoot.getElementById("rich-text-box-table-classes");
 
         if (rows.value.length == 0 || columns.value.length == 0) {
@@ -2987,15 +3046,18 @@ class RTBlazorfiedTableDialog {
         }
 
         /* Get the link selection or element */
-        if (this.table != null) {
-            if (classes != null) {
+        if (this.table !== null) {
+            if (width !== null) {
+                this.table.style.width = width.value;
+            }
+            if (classes !== null) {
                 this.Utilities.addClasses(classes.value, this.table);
             }
         }
         else {
             if (this.tableSelection != null) {
                 const range = this.tableSelection;
-                const table = this.createTable(rows.value, columns.value);
+                const table = this.createTable(rows.value, columns.value, width.value);
                 if (classes != null) {
                     this.Utilities.addClasses(classes.value, table);
                 }
@@ -3016,32 +3078,29 @@ class RTBlazorfiedTableDialog {
 
         this.Utilities.closeDialog("rich-text-box-table-modal");
     }
-    createTable = (r, c) => {
-        // Convert rows and columns to integers
+    createTable = (r, c, w) => {
         const rows = parseInt(r, 10);
         const columns = parseInt(c, 10);
 
-        // Create the table element
+        /* Create the table element */
         const table = document.createElement('table');
-        //table.style.setProperty('margin', 'auto');
-
-        // Create the table body element
+        if (w) {
+            table.style.width = w;
+        }
         const tbody = document.createElement('tbody');
 
-        // Loop through the number of rows
+        /* Iterate the rows */
         for (let i = 0; i < rows; i++) {
-            // Create a row element
             const tr = document.createElement('tr');
 
-            // Loop through the number of columns
+            /* Iterate the columns */
             for (let j = 0; j < columns; j++) {
-                // Create a cell element
                 const td = document.createElement('td');
                 td.innerHTML = `&#8203;`;
                 tr.appendChild(td);
             }
 
-            // Append the row to the tbody
+            /* Append the row to the tbody */
             tbody.appendChild(tr);
         }
 
@@ -3464,29 +3523,33 @@ class RTBlazorfiedBlockQuoteDialog {
 }
 
 class RTBlazorfiedUploadImageDialog {
-    constructor(shadowRoot, content) {
+    constructor(shadowRoot, content, utilities) {
         this.shadowRoot = shadowRoot;
         this.content = content;
-
+        this.Utilities = utilities;
+        this.addEventListeners();
+    }
+    addEventListeners = () => {
         this.dialog = this.shadowRoot.getElementById("rich-text-box-upload-image-modal");
-        this.dialog.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                this.insertUploadedImage();
-                this.dialog.close();
-                this.content.focus();
-            }
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                this.dialog.close();
-                this.content.focus();
-            }
-        });
+        if (this.dialog) {
+            this.dialog.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    this.insertUploadedImage();
+                    this.dialog.close();
+                    this.content.focus();
+                }
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    this.dialog.close();
+                    this.content.focus();
+                }
+            });
+        }
+        
 
         const actualBtn = this.shadowRoot.getElementById('rich-text-box-upload-image-file');
         actualBtn.addEventListener('change', this.handleFileSelect);
-
-        this.Utilities = new RTBlazorfiedUtilities(this.shadowRoot, this.content);
     }
     handleFileSelect = (event) => {
         const file = event.target.files[0]; // Get the selected file
