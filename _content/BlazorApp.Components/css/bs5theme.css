@@ -17,6 +17,13 @@
     --Font-Family: 'Montserrat', Helvetica, Arial, sans-serif;
 }
 
+blockquote {
+    background: #f9f9f9;
+    border-left: 5px solid #3073ea;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
 .BlueTheme {
     /* Primary Colors */
     --PrimaryGreen: #006400;
