@@ -992,7 +992,7 @@ button.close:focus {
 
 .app-wrapper {
     transition: all .4s ease-in-out;
-    margin-top: 58px;
+/*    margin-top: 58px;*/
     /*height: calc(100vh - 58px);
     overflow-x: hidden;
     overflow-y: auto;*/
