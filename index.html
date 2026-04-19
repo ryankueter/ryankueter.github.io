@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#1e1b4b" />
     <base href="/" />
 
     <link href="_content/BlazorApp.Components/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -17,11 +17,206 @@
     <link href="_content/BlazorApp.Components/css/bs5theme.css" rel="stylesheet" crossorigin="anonymous">
     <link href="/css/styles.css" rel="stylesheet">
     <script rel="preload" async defer src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <style>
+        /* ── Splash screen ─────────────────────────────────────────── */
+        #splash {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #05070f 0%, #0b0f20 60%, #08081c 100%);
+            z-index: 9999;
+            overflow: hidden;
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+        }
+
+        #splash::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(129,140,248,.11) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .s-glow {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .s-glow-1 {
+            width: 520px; height: 520px;
+            background: radial-gradient(circle at center, rgba(79,70,229,.22) 0%, transparent 65%);
+            top: -190px; left: -150px;
+        }
+
+        .s-glow-2 {
+            width: 440px; height: 440px;
+            background: radial-gradient(circle at center, rgba(124,58,237,.17) 0%, transparent 65%);
+            bottom: -130px; right: -110px;
+        }
+
+        .s-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.1rem;
+            padding: 2.75rem 3.5rem;
+            background: rgba(13, 18, 38, 0.72);
+            border: 1px solid rgba(129,140,248,.20);
+            border-radius: 1.5rem;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.06),
+                0 8px 60px rgba(79,70,229,.16),
+                0 2px 20px rgba(0,0,0,.50);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            animation: s-in .85s cubic-bezier(.22,.68,0,1.2) both;
+        }
+
+        @keyframes s-in {
+            from { opacity: 0; transform: scale(.88) translateY(24px); }
+            to   { opacity: 1; transform: scale(1)   translateY(0); }
+        }
+
+        .s-logo {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .s-ring {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            animation: s-spin 2.4s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes s-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .s-ring-track {
+            fill: none;
+            stroke: rgba(129,140,248,.14);
+            stroke-width: 2;
+        }
+
+        .s-ring-arc {
+            fill: none;
+            stroke: url(#s-grad);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-dasharray: 194 83;
+        }
+
+        .s-initials {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+            text-shadow:
+                0 0 32px rgba(129,140,248,.90),
+                0 0 10px rgba(129,140,248,.55);
+        }
+
+        .s-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e0e7ff;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            animation: s-up .6s .30s ease both;
+        }
+
+        .s-title {
+            font-size: .70rem;
+            font-weight: 500;
+            color: rgba(148,163,184,.68);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-top: -.55rem;
+            animation: s-up .6s .45s ease both;
+        }
+
+        @keyframes s-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .s-bar-wrap {
+            width: 120px;
+            height: 2px;
+            background: rgba(129,140,248,.13);
+            border-radius: 999px;
+            overflow: hidden;
+            animation: s-up .6s .60s ease both;
+        }
+
+        .s-bar {
+            height: 100%;
+            width: 45%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                #6366f1    30%,
+                #a5b4fc    60%,
+                #6366f1    80%,
+                transparent 100%
+            );
+            border-radius: 999px;
+            animation: s-sweep 1.8s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes s-sweep {
+            from { transform: translateX(-200%); }
+            to   { transform: translateX(420%); }
+        }
+        /* ── End Splash ────────────────────────────────────────────── */
+    </style>
 </head>
 
 <body>
     <div id="app">
+        <div id="splash">
+            <div class="s-glow s-glow-1"></div>
+            <div class="s-glow s-glow-2"></div>
+            <div class="s-card">
+                <div class="s-logo">
+                    <svg class="s-ring" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="s-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%"   stop-color="#4f46e5" stop-opacity="0"/>
+                                <stop offset="45%"  stop-color="#818cf8" stop-opacity="1"/>
+                                <stop offset="100%" stop-color="#c7d2fe" stop-opacity="0.7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="s-ring-track" cx="50" cy="50" r="44"/>
+                        <circle class="s-ring-arc"   cx="50" cy="50" r="44"/>
+                    </svg>
+                    <div class="s-initials">RK</div>
+                </div>
+                <div class="s-name">Ryan Kueter</div>
+                <div class="s-title">Software Developer</div>
+                <div class="s-bar-wrap">
+                    <div class="s-bar"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <button id="scroll-top-btn" onclick="scrollToTop()" title="Back to top" aria-label="Scroll to top">

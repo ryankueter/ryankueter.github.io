@@ -16,12 +16,15 @@
 /* ===================== Library showcase cards ===================== */
 
 .lib-card {
-    background: var(--CardSecondaryBackground);
+    background: var(--CardBackground);
     border-radius: 0.625rem;
-    border: 1px solid var(--BorderColor);
+    border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.28));
     padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     height: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--CardShadow);
 }
 
 .lib-card:hover {
@@ -94,13 +97,6 @@
     padding: 4px 12px;
     font-size: 0.78rem;
     font-weight: 600;
-    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-
-.badge-skill:hover {
-    background: var(--PrimaryColor);
-    color: #fff;
-    border-color: var(--PrimaryColor);
     cursor: default;
 }
 
@@ -146,10 +142,13 @@
     flex-direction: column;
     align-items: center;
     padding: 0.75rem 1.25rem;
-    background: var(--NavLinkBackground);
+    background: var(--CardBackground);
     border-radius: 0.625rem;
-    border: 1px solid var(--BorderColor);
+    border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.28));
     min-width: 90px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--CardShadow);
 }
 
 .stat-highlight .stat-number {
@@ -329,8 +328,7 @@ a:not(.nav-link):not(.btn):not(.lib-card-link):not(.dropdown-item) {
 }
 
 a:not(.nav-link):not(.btn):not(.lib-card-link):not(.dropdown-item):hover {
-    text-decoration: underline;
-    text-decoration-color: var(--LinkColorHover);
+    text-decoration: none;
 }
 
 /* Page content spacing */

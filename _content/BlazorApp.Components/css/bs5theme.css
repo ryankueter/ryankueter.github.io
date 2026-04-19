@@ -91,18 +91,18 @@ pre code {
     --TextColor: #4f46e5;
     --ControlTextColor: #374151;
     --BodyTextColor: #374151;
-    --BodyBackground: #f8fafc;
+    --BodyBackground: linear-gradient(145deg, #eef2ff 0%, #f8fafc 55%, #f5f3ff 100%);
     --BorderColor: #e2e8f0;
     --BorderActiveColor: #6366f1;
     /* Top Nav */
-    --TopBarBackground: #FFFFFF;
+    --TopBarBackground: rgba(255, 255, 255, 0.80);
     /* Side Nav */
     --SidePanelBackground: #FFFFFF;
     --SidePanelNavItemBackground: #FFFFFF;
     --SidePanelNavText: #374151;
     --SidePanelClose: #f8fafc;
     /* Cards */
-    --CardBackground: #FFFFFF;
+    --CardBackground: rgba(255, 255, 255, 0.78);
     --CardSecondaryBackground: #f1f5f9;
     --CardCloseButton: none;
     --CardHoverColor: #f8faff;
@@ -114,11 +114,12 @@ pre code {
     --ScrollColor: #cbd5e1;
     --ScrollColorHover: #94a3b8;
     /* Shadows */
-    --CardShadow: 0 1px 3px 0 rgba(0,0,0,.07), 0 1px 2px -1px rgba(0,0,0,.05);
-    --CardShadowHover: 0 8px 20px -4px rgba(79,70,229,.12), 0 4px 8px -4px rgba(0,0,0,.06);
+    --CardShadow: 0 1px 4px 0 rgba(79,70,229,.07), 0 1px 2px -1px rgba(0,0,0,.04), inset 0 1px 0 rgba(255,255,255,.75);
+    --CardShadowHover: 0 8px 24px -4px rgba(79,70,229,.16), 0 4px 8px -4px rgba(0,0,0,.06), inset 0 1px 0 rgba(255,255,255,.9);
+    --GlassCardBorder: rgba(255, 255, 255, 0.35);
     --TopBarShadow: 0 1px 3px 0 rgba(0,0,0,.06);
     --SidebarShadow: 2px 0 12px rgba(0,0,0,.06);
-    --SidebarGradient: linear-gradient(180deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+    --SidebarGradient: linear-gradient(180deg, rgba(30,27,75,0.93) 0%, rgba(49,46,129,0.91) 60%, rgba(67,56,202,0.89) 100%);
     --SidebarLogoText: #e0e7ff;
     --SidebarNavActive: rgba(255,255,255,.15);
     --SidebarNavText: rgba(255,255,255,.92);
@@ -173,18 +174,18 @@ pre code {
     --TextColor: #94a3b8;
     --ControlTextColor: #e2e8f0;
     --BodyTextColor: #cbd5e1;
-    --BodyBackground: #0f172a;
+    --BodyBackground: linear-gradient(145deg, #08101f 0%, #0f172a 55%, #0c0c1f 100%);
     --BorderColor: #1e293b;
     --BorderActiveColor: #818cf8;
     /* Top Nav */
-    --TopBarBackground: #1e293b;
+    --TopBarBackground: rgba(15, 23, 42, 0.82);
     /* Side Nav */
     --SidePanelBackground: #1e293b;
     --SidePanelNavItemBackground: #1e293b;
     --SidePanelNavText: #94a3b8;
     --SidePanelClose: #334155;
     /* Cards */
-    --CardBackground: #1e293b;
+    --CardBackground: rgba(30, 41, 59, 0.72);
     --CardSecondaryBackground: #0f172a;
     --CardCloseButton: invert(100%);
     --CardHoverColor: #334155;
@@ -196,11 +197,12 @@ pre code {
     --ScrollColor: #334155;
     --ScrollColorHover: #475569;
     /* Shadows */
-    --CardShadow: 0 1px 3px 0 rgba(0,0,0,.3), 0 1px 2px -1px rgba(0,0,0,.2);
-    --CardShadowHover: 0 8px 20px -4px rgba(0,0,0,.4), 0 4px 8px -4px rgba(0,0,0,.3);
+    --CardShadow: 0 1px 4px 0 rgba(0,0,0,.3), 0 1px 2px -1px rgba(0,0,0,.2), inset 0 1px 0 rgba(129,140,248,.12);
+    --CardShadowHover: 0 8px 24px -4px rgba(0,0,0,.4), 0 4px 8px -4px rgba(0,0,0,.3), inset 0 1px 0 rgba(129,140,248,.22);
+    --GlassCardBorder: rgba(255, 255, 255, 0.07);
     --TopBarShadow: 0 1px 3px 0 rgba(0,0,0,.3);
     --SidebarShadow: 2px 0 15px rgba(0,0,0,.4);
-    --SidebarGradient: linear-gradient(180deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
+    --SidebarGradient: linear-gradient(180deg, rgba(15,23,42,0.93) 0%, rgba(30,27,75,0.91) 60%, rgba(49,46,129,0.89) 100%);
     --SidebarLogoText: #e0e7ff;
     --SidebarNavActive: rgba(129,140,248,.18);
     --SidebarNavText: #cbd5e1;
@@ -280,6 +282,7 @@ body {
     height: 100%;
     width: 100%;
     background: var(--BodyBackground);
+    background-attachment: fixed;
     overflow: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -508,11 +511,13 @@ button.close:focus {
     }
 
 .dropdown-menu {
-    border-color: var(--InputBorderColor, var(--BorderColor));
+    border-color: var(--GlassCardBorder, rgba(255,255,255,.25));
     background-color: var(--SidePanelBackground);
     border-radius: 0.5rem;
     box-shadow: 0 8px 24px rgba(0,0,0,.12);
     padding: 0.25rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
     .dropdown-menu .dropdown-item {
@@ -525,11 +530,11 @@ button.close:focus {
     }
 
         .dropdown-menu .dropdown-item:hover {
-            color: var(--PrimaryColor);
+            color: var(--PrimaryColorHover);
         }
 
         .dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
-            background: var(--NavLinkBackground);
+            background: rgba(99, 102, 241, 0.1);
         }
 
         .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
@@ -557,12 +562,12 @@ button.close:focus {
 
 .app-header {
     box-shadow: var(--TopBarShadow, 0 1px 4px 0 rgba(0,0,0,.08));
-    border-bottom: 1px solid var(--BorderColor);
+    border-bottom: 1px solid var(--GlassCardBorder, rgba(255,255,255,.25));
     height: 56px;
     background: var(--TopBarBackground);
     transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .app-header-inner {
@@ -604,7 +609,7 @@ button.close:focus {
 
 .app-utility-item {
     display: inline-block;
-    margin-right: 1.25rem;
+    margin-right: 0.5rem;
 }
 
     .app-utility-item:last-child {
@@ -613,10 +618,30 @@ button.close:focus {
 
     .app-utility-item > a {
         color: var(--TextColor);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.25));
+        font-size: 0.925rem;
+        font-weight: 600;
+        line-height: 1;
+        transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     }
 
+        .app-utility-item > a .bi,
+        .app-utility-item > a i {
+            font-size: 1.15rem !important;
+            line-height: 1;
+            position: static;
+        }
+
         .app-utility-item > a:hover {
-            color: var(--ControlTextColor);
+            color: var(--PrimaryColorHover);
+            background: rgba(99, 102, 241, 0.08);
+            border-color: var(--PrimaryColor);
+            text-decoration: none;
         }
 
     .app-utility-item .dropdown-toggle {
@@ -837,6 +862,9 @@ button.close:focus {
         width: 250px;
         height: 100%;
         transition: box-shadow 0.25s ease;
+        border-right: 1px solid rgba(255,255,255,.09);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
     }
 
     .app-sidepanel .sidepanel-close {
@@ -1122,6 +1150,9 @@ button.close:focus {
     box-shadow: var(--CardShadow, 0 1px 3px 0 rgba(0,0,0,.07));
     animation: fadeIn .4s ease-out;
     transition: box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.28));
 }
 
 .app-card:hover {
