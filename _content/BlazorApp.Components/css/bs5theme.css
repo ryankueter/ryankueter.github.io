@@ -621,13 +621,20 @@ button.close:focus {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
-        padding: 0.45rem 1.1rem;
+        height: 2.1rem;
+        padding: 0 1.1rem;
         border-radius: 999px;
         border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.25));
         font-size: 0.925rem;
         font-weight: 600;
         line-height: 1;
         transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        box-sizing: border-box;
+    }
+
+    /* Remove Bootstrap caret — the bi icon already serves as the indicator */
+    .app-utility-item .dropdown-toggle::after {
+        display: none;
     }
 
         .app-utility-item > a .bi,

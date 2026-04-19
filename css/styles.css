@@ -100,6 +100,12 @@
     cursor: default;
 }
 
+.DarkTheme .badge-skill {
+    color: rgba(224, 231, 255, 0.90);
+    background: rgba(79, 70, 229, 0.20);
+    border-color: rgba(129, 140, 248, 0.28);
+}
+
 /* ===================== Scroll-to-top button ===================== */
 
 #scroll-top-btn {
