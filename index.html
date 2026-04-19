@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width">
     <title>Ryan Kueter - Github Pages</title>
+    <meta name="description" content="Ryan Kueter - Software Developer. Portfolio and demos for open-source .NET libraries." />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#ffffff" />
     <base href="/" />
 
     <link href="_content/BlazorApp.Components/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -22,10 +24,14 @@
     <div id="app">
     </div>
 
+    <button id="scroll-top-btn" onclick="scrollToTop()" title="Back to top" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+        <a class="dismiss">&#10005;</a>
     </div>
 
     <script src="_framework/blazor.webassembly.js"></script>

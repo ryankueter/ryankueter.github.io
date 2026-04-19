@@ -18,126 +18,207 @@
 }
 
 blockquote {
-    background: #f9f9f9;
-    border-left: 5px solid #3073ea;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    background: var(--CodeBackground, #f9f9f9);
+    border-left: 4px solid var(--PrimaryColor, #3073ea);
+    margin: 1.25em 0;
+    padding: 0.75em 1rem;
+    border-radius: 0 0.375rem 0.375rem 0;
+    color: var(--BodyTextColor);
+}
+
+pre {
+    background: var(--CodeBackground);
+    border: 1px solid var(--CodeBorder, var(--BorderColor));
+    border-left: 4px solid var(--PrimaryColor);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--CodeTextColor);
+    margin-bottom: 1rem;
+    font-family: 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+code {
+    background: var(--CodeInlineBackground);
+    color: var(--CodeInlineTextColor);
+    padding: 0.15em 0.45em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    color: inherit;
 }
 
 .BlueTheme {
     /* Primary Colors */
-    --PrimaryGreen: #006400;
-    --PrimaryRed: #8B0000;
+    --PrimaryGreen: #059669;
+    --PrimaryRed: #dc2626;
     /* Link Colors */
-    --LinkColor: #445668;
-    --LinkColorHover: #859aaf;
-    --NavLinkBackground: #f3f5f7;
+    --LinkColor: #4f46e5;
+    --LinkColorHover: #6366f1;
+    --NavLinkBackground: #eef2ff;
     /* Button Colors */
-    --PrimaryButtonColor: #5f7892;
-    --PrimaryButtonColorHover: #859aaf;
-    --PrimaryButtonBorderColor: #5f7892;
+    --PrimaryButtonColor: #4f46e5;
+    --PrimaryButtonColorHover: #6366f1;
+    --PrimaryButtonBorderColor: #4f46e5;
     --ButtonTextColor: #FFFFFF;
     --ButtonBackgroundColor: #FFFFFF;
-    --ButtonBackgroundColorActive: #5f7892;
+    --ButtonBackgroundColorActive: #4f46e5;
     --ButtonTextColorActive: #FFFFFF;
-    --ButtonBorder: #d6dde4;
-    --ButtonTextColorDisabled: #9fa7b5;
-    --ButtonBackgroundColorDisabled: #252526;
-    --ButtonBorderDisabled: #d6dde4;
-    --SecondaryButtonColorHover: #445668;
+    --ButtonBorder: #e2e8f0;
+    --ButtonTextColorDisabled: #94a3b8;
+    --ButtonBackgroundColorDisabled: #f1f5f9;
+    --ButtonBorderDisabled: #e2e8f0;
+    --SecondaryButtonColorHover: #4f46e5;
     /* Textbox */
     --TextBoxBackgroundColor: #FFFFFF;
     /* Body */
-    --PrimaryColor: #5f7892;
-    --PrimaryColorHover: #859aaf;
+    --PrimaryColor: #4f46e5;
+    --PrimaryColorHover: #6366f1;
     --PrimaryTextColor: #FFFFFF;
     --SecondaryColor: #FFFFFF;
-    --SecondaryColorHover: #445668;
-    --DisabledColor: #f3f5f7;
-    --SecondaryBorderColor: #d6dde4;
-    --TextColor: #5f7892;
-    --ControlTextColor: #445668;
-    --BodyTextColor: #555555;
-    --BodyBackground: #f3f5f7;
-    --BorderColor: #d6dde4;
-    --BorderActiveColor: #859aaf;
+    --SecondaryColorHover: #4f46e5;
+    --DisabledColor: #f1f5f9;
+    --SecondaryBorderColor: #e2e8f0;
+    --TextColor: #4f46e5;
+    --ControlTextColor: #374151;
+    --BodyTextColor: #374151;
+    --BodyBackground: #f8fafc;
+    --BorderColor: #e2e8f0;
+    --BorderActiveColor: #6366f1;
     /* Top Nav */
     --TopBarBackground: #FFFFFF;
     /* Side Nav */
     --SidePanelBackground: #FFFFFF;
     --SidePanelNavItemBackground: #FFFFFF;
-    --SidePanelNavText: #445668;
-    --SidePanelClose: #fafbff;
+    --SidePanelNavText: #374151;
+    --SidePanelClose: #f8fafc;
     /* Cards */
     --CardBackground: #FFFFFF;
-    --CardSecondaryBackground: #e9eaf1;
+    --CardSecondaryBackground: #f1f5f9;
     --CardCloseButton: none;
-    --CardHoverColor: #fbfbfe;
-    --CardFooter: #fafbff;
+    --CardHoverColor: #f8faff;
+    --CardFooter: #f8fafc;
     /* Other Controls */
-    --CheckBoxColor: #5f7892;
+    --CheckBoxColor: #4f46e5;
     --CalendarPicker: none;
     /* Scroll */
-    --ScrollColor: #d3d5d7;
-    --ScrollColorHover: #dedede;
+    --ScrollColor: #cbd5e1;
+    --ScrollColorHover: #94a3b8;
+    /* Shadows */
+    --CardShadow: 0 1px 3px 0 rgba(0,0,0,.07), 0 1px 2px -1px rgba(0,0,0,.05);
+    --CardShadowHover: 0 8px 20px -4px rgba(79,70,229,.12), 0 4px 8px -4px rgba(0,0,0,.06);
+    --TopBarShadow: 0 1px 3px 0 rgba(0,0,0,.06);
+    --SidebarShadow: 2px 0 12px rgba(0,0,0,.06);
+    --SidebarGradient: linear-gradient(180deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+    --SidebarLogoText: #e0e7ff;
+    --SidebarNavActive: rgba(255,255,255,.15);
+    --SidebarNavText: rgba(255,255,255,.92);
+    --SidebarNavActiveText: #ffffff;
+    --SidebarNavHover: rgba(255,255,255,.1);
+    --SidebarNavBorderActive: #a5b4fc;
+    /* Code blocks */
+    --CodeBackground: #f6f8fa;
+    --CodeBorder: #d0d7de;
+    --CodeTextColor: #24292f;
+    --CodeInlineBackground: #eef2ff;
+    --CodeInlineTextColor: #4f46e5;
+    --CodeKeywordColor: #d73a49;
+    --CodeStringColor: #032f62;
+    --CodeCommentColor: #6a737d;
+    /* Input border */
+    --InputBorderColor: #d1d5db;
+    --InputBorderColorFocus: #6366f1;
 }
 
 .DarkTheme {
     /* Primary Colors */
-    --PrimaryGreen: #006400;
-    --PrimaryRed: #8B0000;
+    --PrimaryGreen: #10b981;
+    --PrimaryRed: #ef4444;
     /* Links */
-    --LinkColor: #D1D1D1;
-    --LinkColorHover: #F1F1F1;
-    --NavLinkBackground: #37373d;
+    --LinkColor: #818cf8;
+    --LinkColorHover: #a5b4fc;
+    --NavLinkBackground: #1e1b4b;
     /* Buttons */
-    --PrimaryButtonColor: #2e2e2e;
-    --PrimaryButtonColorHover: #555555;
-    --PrimaryButtonBorderColor: #d6dde4;
+    --PrimaryButtonColor: #4f46e5;
+    --PrimaryButtonColorHover: #6366f1;
+    --PrimaryButtonBorderColor: #4f46e5;
     --ButtonTextColor: #FFFFFF;
-    --ButtonBackgroundColor: #252526;
-    --ButtonBackgroundColorActive: #FFFFFF;
-    --ButtonTextColorActive: #2e2e2e;
-    --ButtonBorder: #2e2e2e;
-    --ButtonTextColorDisabled: #9fa7b5;
-    --ButtonBackgroundColorDisabled: #252526;
-    --ButtonBorderDisabled: #d6dde4;
-    --SecondaryButtonColorHover: #FFFFFF;
+    --ButtonBackgroundColor: #1e293b;
+    --ButtonBackgroundColorActive: #4f46e5;
+    --ButtonTextColorActive: #FFFFFF;
+    --ButtonBorder: #334155;
+    --ButtonTextColorDisabled: #64748b;
+    --ButtonBackgroundColorDisabled: #1e293b;
+    --ButtonBorderDisabled: #334155;
+    --SecondaryButtonColorHover: #a5b4fc;
     /* Textbox */
-    --TextBoxBackgroundColor: #353536;
+    --TextBoxBackgroundColor: #1e293b;
     /* Body */
-    --PrimaryColor: #d6dde4;
-    --PrimaryColorHover: #859aaf;
+    --PrimaryColor: #818cf8;
+    --PrimaryColorHover: #a5b4fc;
     --PrimaryTextColor: #FFFFFF;
-    --SecondaryColor: #252526;
-    --SecondaryColorHover: #445668;
-    --SecondaryBorderColor: #2e2e2e;
-    --DisabledColor: #454546;
-    --TextColor: #c1c1c1;
-    --ControlTextColor: #c1c1c1;
-    --BodyTextColor: #d6dde4;
-    --BodyBackground: #1e1e1e;
-    --BorderColor: #2e2e2e;
-    --BorderActiveColor: #859aaf;
+    --SecondaryColor: #1e293b;
+    --SecondaryColorHover: #334155;
+    --SecondaryBorderColor: #334155;
+    --DisabledColor: #334155;
+    --TextColor: #94a3b8;
+    --ControlTextColor: #e2e8f0;
+    --BodyTextColor: #cbd5e1;
+    --BodyBackground: #0f172a;
+    --BorderColor: #1e293b;
+    --BorderActiveColor: #818cf8;
     /* Top Nav */
-    --TopBarBackground: #252526;
+    --TopBarBackground: #1e293b;
     /* Side Nav */
-    --SidePanelBackground: #252526;
-    --SidePanelNavItemBackground: #252526;
-    --SidePanelNavText: #c1c1c1;
-    --SidePanelClose: #2e2e2e;
+    --SidePanelBackground: #1e293b;
+    --SidePanelNavItemBackground: #1e293b;
+    --SidePanelNavText: #94a3b8;
+    --SidePanelClose: #334155;
     /* Cards */
-    --CardBackground: #252526;
-    --CardSecondaryBackground: #2e2e2e;
+    --CardBackground: #1e293b;
+    --CardSecondaryBackground: #0f172a;
     --CardCloseButton: invert(100%);
-    --CardHoverColor: #555555;
-    --CardFooter: #2e2e2e;
+    --CardHoverColor: #334155;
+    --CardFooter: #0f172a;
     /* Other Controls */
-    --CheckBoxColor: #2e2e2e;
+    --CheckBoxColor: #4f46e5;
     --CalendarPicker: invert(1);
     /* Scroll */
-    --ScrollColor: #3e3e3e;
-    --ScrollColorHover: #5e5e5e;
+    --ScrollColor: #334155;
+    --ScrollColorHover: #475569;
+    /* Shadows */
+    --CardShadow: 0 1px 3px 0 rgba(0,0,0,.3), 0 1px 2px -1px rgba(0,0,0,.2);
+    --CardShadowHover: 0 8px 20px -4px rgba(0,0,0,.4), 0 4px 8px -4px rgba(0,0,0,.3);
+    --TopBarShadow: 0 1px 3px 0 rgba(0,0,0,.3);
+    --SidebarShadow: 2px 0 15px rgba(0,0,0,.4);
+    --SidebarGradient: linear-gradient(180deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
+    --SidebarLogoText: #e0e7ff;
+    --SidebarNavActive: rgba(129,140,248,.18);
+    --SidebarNavText: #cbd5e1;
+    --SidebarNavActiveText: #a5b4fc;
+    --SidebarNavHover: rgba(255,255,255,.06);
+    --SidebarNavBorderActive: #818cf8;
+    /* Code blocks */
+    --CodeBackground: #0d1117;
+    --CodeBorder: #30363d;
+    --CodeTextColor: #e6edf3;
+    --CodeInlineBackground: #1e1b4b;
+    --CodeInlineTextColor: #a5b4fc;
+    --CodeKeywordColor: #ff7b72;
+    --CodeStringColor: #a5d6ff;
+    --CodeCommentColor: #8b949e;
+    /* Input border (darker theme needs explicit visible border) */
+    --InputBorderColor: #475569;
+    --InputBorderColorFocus: #818cf8;
 }
 
 #blazor-error-ui {
@@ -200,6 +281,7 @@ body {
     width: 100%;
     background: var(--BodyBackground);
     overflow: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -331,6 +413,8 @@ button.close:focus {
     padding: .4rem 1rem;
     font-size: .875rem;
     border: none;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 
     .btn:hover, .btn:active, .btn:focus {
@@ -352,13 +436,17 @@ button.close:focus {
     border-color: var(--PrimaryButtonBorderColor);
     cursor: pointer;
     height: 2rem;
-    padding: 5px 10px;
+    padding: 5px 14px;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.08);
 }
 
     .app-btn-primary:hover {
         color: var(--PrimaryTextColor);
         background: var(--PrimaryButtonColorHover);
         border-color: var(--PrimaryColorHover);
+        box-shadow: 0 4px 8px -2px rgba(79,70,229,.3);
+        transform: translateY(-1px);
     }
 
 .app-btn-secondary {
@@ -394,17 +482,18 @@ button.close:focus {
     padding-top: .6rem;
     padding-bottom: .6rem;
     height: 2rem;
-    border-color: var(--BorderColor);
-    color: var(--TextColor);
-    border-radius: 3px;
+    border: 1px solid var(--InputBorderColor, var(--BorderColor));
+    color: var(--ControlTextColor);
+    border-radius: 0.375rem;
     background-color: var(--TextBoxBackgroundColor);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
     .form-control:focus {
-        box-shadow: none;
+        box-shadow: 0 0 0 3px rgba(99,102,241,.15);
         outline: none;
-        color: var(--TextColor);
-        border-color: var(--BorderActiveColor);
+        color: var(--ControlTextColor);
+        border-color: var(--InputBorderColorFocus, var(--BorderActiveColor));
         background-color: var(--TextBoxBackgroundColor);
     }
 
@@ -419,19 +508,24 @@ button.close:focus {
     }
 
 .dropdown-menu {
-    border-color: var(--BorderColor);
+    border-color: var(--InputBorderColor, var(--BorderColor));
     background-color: var(--SidePanelBackground);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    padding: 0.25rem;
 }
 
     .dropdown-menu .dropdown-item {
-        padding: .5rem 1rem;
-        color: var(--PrimaryColor);
-        font-size: 14px;
+        padding: .5rem .875rem;
+        color: var(--ControlTextColor);
+        font-size: 0.875rem;
         cursor: pointer;
+        border-radius: 0.375rem;
+        transition: background 0.15s ease, color 0.15s ease;
     }
 
         .dropdown-menu .dropdown-item:hover {
-            color: var(--ControlTextColor);
+            color: var(--PrimaryColor);
         }
 
         .dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
@@ -439,7 +533,8 @@ button.close:focus {
         }
 
         .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
-            background: #fafbff;
+            background: var(--NavLinkBackground);
+            color: var(--PrimaryColor);
         }
 
 .dropdown-icon {
@@ -461,10 +556,13 @@ button.close:focus {
 }
 
 .app-header {
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+    box-shadow: var(--TopBarShadow, 0 1px 4px 0 rgba(0,0,0,.08));
     border-bottom: 1px solid var(--BorderColor);
     height: 56px;
     background: var(--TopBarBackground);
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .app-header-inner {
@@ -734,10 +832,11 @@ button.close:focus {
     .app-sidepanel .sidepanel-inner {
         position: relative;
         z-index: 10;
-        background: var(--SidePanelBackground);
-        box-shadow: rgba(0,0,0,.05) 0px 8px 15px;
+        background: var(--SidebarGradient, var(--SidePanelBackground));
+        box-shadow: var(--SidebarShadow, rgba(0,0,0,.06) 2px 0 12px);
         width: 250px;
         height: 100%;
+        transition: box-shadow 0.25s ease;
     }
 
     .app-sidepanel .sidepanel-close {
@@ -785,22 +884,24 @@ button.close:focus {
         }
 
 .app-branding {
-    height: 200px;
-    padding-top: 1rem;
-    margin-bottom: 1rem;
+    height: 210px;
+    padding-top: 1.25rem;
+    margin-bottom: 0.75rem;
     text-align: center;
 }
 
 .app-branding .logo-icon {
-    /*width: 36px;*/
     height: 150px;
 }
 
 .app-branding .logo-text {
-    color: var(--ControlTextColor);
-    font-size: 1.25rem;
-    font-weight: 600;
+    color: var(--SidebarLogoText, var(--ControlTextColor));
+    font-size: 1.1rem;
+    font-weight: 700;
     vertical-align: middle;
+    letter-spacing: 0.02em;
+    margin-top: 0.25rem;
+    display: block;
 }
 
 .app-nav {
@@ -816,25 +917,28 @@ button.close:focus {
 
     .app-nav .nav-item {
         display: block;
-        color: var(--TextColor);
-        background: var(--SidePanelNavItemBackground);
+        color: var(--SidebarNavText, var(--TextColor));
+        background: transparent;
     }
 
     .app-nav .nav-link {
         display: block;
         padding: .875rem 1rem;
-        color: var(--ControlTextColor);
+        color: var(--SidebarNavText, var(--ControlTextColor));
         position: relative;
         display: block;
         padding-left: 3rem;
         border-left: 3px solid transparent;
+        transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+        border-radius: 0 0.375rem 0.375rem 0;
+        margin-right: 0.5rem;
     }
 
         .app-nav .nav-link.active {
-            color: var(--PrimaryColor);
-            background: var(--NavLinkBackground);
-            border-left: 3px solid var(--PrimaryColor);
-            font-weight: 500;
+            color: var(--SidebarNavActiveText, var(--PrimaryColor));
+            background: var(--SidebarNavActive, var(--NavLinkBackground));
+            border-left: 3px solid var(--SidebarNavBorderActive, var(--PrimaryColor));
+            font-weight: 600;
         }
 
         .app-nav .nav-link.submenu-toggle.active {
@@ -843,7 +947,8 @@ button.close:focus {
         }
 
         .app-nav .nav-link:hover {
-            color: var(--PrimaryColor);
+            color: var(--SidebarNavActiveText, var(--PrimaryColor));
+            background: var(--SidebarNavHover, rgba(0,0,0,.04));
         }
 
     .app-nav .nav-icon {
@@ -1013,17 +1118,25 @@ button.close:focus {
 .app-card {
     position: relative;
     background: var(--CardBackground);
-    border-radius: .25rem;
-    animation: fadeIn .3s;
+    border-radius: 0.625rem;
+    box-shadow: var(--CardShadow, 0 1px 3px 0 rgba(0,0,0,.07));
+    animation: fadeIn .4s ease-out;
+    transition: box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.app-card:hover {
+    box-shadow: var(--CardShadowHover, 0 8px 20px -4px rgba(0,0,0,.1));
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateY(10px);
     }
 
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -1067,8 +1180,10 @@ button.close:focus {
     height: 2rem;
     padding: 3px 10px;
     background-color: var(--TextBoxBackgroundColor);
-    color: var(--TextColor);
-    border-color: var(--SecondaryBorderColor);
+    color: var(--ControlTextColor);
+    border: 1px solid var(--InputBorderColor, var(--SecondaryBorderColor));
+    border-radius: 0.375rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
     .form-select:focus {
@@ -1080,8 +1195,9 @@ select.form-control {
     height: 2rem;
     padding: 3px 10px;
     background-color: var(--TextBoxBackgroundColor);
-    color: var(--TextColor);
-    border-color: var(--SecondaryBorderColor);
+    color: var(--ControlTextColor);
+    border: 1px solid var(--InputBorderColor, var(--SecondaryBorderColor));
+    border-radius: 0.375rem;
     -webkit-appearance: menulist !important;
     -moz-appearance: menulist !important;
     appearance: menulist !important;
