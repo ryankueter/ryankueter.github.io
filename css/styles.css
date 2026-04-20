@@ -18,7 +18,7 @@
 .lib-card {
     background: var(--CardBackground);
     border-radius: 0.625rem;
-    border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.28));
+    border: 1px solid var(--SplitBtnBorder, rgba(99,102,241,.38));
     padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     height: 100%;
