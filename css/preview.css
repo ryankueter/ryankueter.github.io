@@ -1,223 +1,69 @@
-﻿/* ─── Base ─── */
-body {
-    background: #0e0d0b;
-    color: #b8b0a2;
-    font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.75;
-    padding: 64px 48px;
-    max-width: 720px;
-    margin: auto;
-    position: relative;
-}
+﻿/*
+ * RTBlazorfied Professional Formatting CSS
+ * * Provides clean, modern spacing, layout structure, and micro-formatting.
+ * Contains no font families, text colors, sizes, or weight styles.
+ */
 
-    body::before {
-        content: '';
-        display: block;
-        height: 2px;
-        width: 40px;
-        background: #c9a96e;
-        margin-bottom: 64px;
-    }
-
-/* ─── Headings ─── */
-h1 {
-    font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
-    font-size: 3em;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: #f0ece4;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #2a2720;
-}
-
-h2 {
-    font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
-    font-size: 1.8em;
-    font-weight: 300;
-    color: #d8d0c0;
-    margin: 2em 0 0.5em;
-}
-
-h3 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.68em;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #c9a96e;
-    margin: 2.2em 0 0.7em;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-    h3::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: #2a2720;
-    }
-
-/* ─── Paragraphs & Links ─── */
+/* --- Document Spacing --- */
 p {
-    margin: 0.9em 0;
+    line-height: 1.65; /* Optimal line-height for body readability */
+    margin-top: 0;
+    margin-bottom: 1.25em; /* Breathing room between paragraphs */
 }
 
-a {
-    color: #c9a96e;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(201, 169, 110, 0.35);
-    transition: color 0.2s, border-color 0.2s;
+h1, h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-    a:hover {
-        color: #dfc08a;
-        border-bottom-color: #c9a96e;
+    /* Ensure the very first heading doesn't have excess top spacing */
+    h1:first-child, h3:first-child {
+        margin-top: 0;
     }
 
-/* ─── Blockquote ─── */
-blockquote {
-    margin: 2em 0;
-    padding: 1.4em 2em;
-    border-left: 2px solid #c9a96e;
-    background: rgba(201, 169, 110, 0.04);
-    font-style: italic;
-    font-size: 1.2em;
-    font-weight: 300;
-    color: #d0c8ba;
-    line-height: 1.6;
-    position: relative;
-}
-
-    blockquote::before {
-        content: '\201C';
-        position: absolute;
-        top: -0.15em;
-        left: 0.4em;
-        font-size: 3em;
-        color: #c9a96e;
-        opacity: 0.25;
-        line-height: 1;
-        font-style: normal;
-    }
-
-/* ─── Lists ─── */
+/* --- List Formatting & Spacing --- */
 ul, ol {
-    list-style: none;
-    margin: 1em 0;
-    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1.25em;
+    padding-left: 1.75em;
 }
 
 li {
-    padding: 0.35em 0 0.35em 1.4em;
-    position: relative;
-    border-bottom: 1px solid #1a1814;
+    margin-bottom: 0.4em; /* Separates list items for scannability */
     line-height: 1.5;
 }
 
-ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #c9a96e;
-    opacity: 0.6;
+/* Keeps nested lists clean */
+ul ul, ul ol, ol ul, ol ol {
+    margin-top: 0.4em;
+    margin-bottom: 0;
+    padding-left: 1.5em;
 }
 
-ol {
-    counter-reset: li;
+/* Inline wrapper handling for your HTML's list structure */
+li > div {
+    display: inline;
 }
 
-    ol li::before {
-        content: counter(li, decimal-leading-zero);
-        counter-increment: li;
-        position: absolute;
-        left: 0;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.72em;
-        font-weight: 500;
-        color: #c9a96e;
-        top: 0.6em;
-    }
-
-/* ─── Code ─── */
-code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.85em;
-    background: #1a1814;
-    color: #c9a96e;
-    padding: 2px 7px;
-    border-radius: 2px;
-    border: 1px solid #2e2b24;
-    letter-spacing: 0.03em;
+/* --- Blockquote Formatting --- */
+blockquote {
+    margin: 1.5em 0;
+    padding: 0.75em 1.25em;
+    border-left: 4px solid #e2e8f0; /* Subdued structural divider */
+    line-height: 1.6;
 }
 
-pre {
-    background: #1a1814;
-    border: 1px solid #2a2720;
-    border-left: 2px solid #c9a96e;
-    padding: 1.4em 1.6em;
-    border-radius: 2px;
-    overflow-x: auto;
-    margin: 1.8em 0;
-}
-
-    pre code {
-        background: none;
-        border: none;
-        padding: 0;
-        font-size: 0.9em;
-        color: #b8b0a2;
-    }
-
-/* ─── Tables ─── */
+/* --- Table Formatting --- */
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 2em 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85em;
-}
-
-th {
-    text-align: left;
-    padding: 10px 14px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 0.72em;
-    color: #c9a96e;
-    border-bottom: 1px solid #2a2720;
-}
-
-td {
-    padding: 10px 14px;
-    color: #9e9790;
-    border-bottom: 1px solid #1a1814;
-}
-
-tr:hover td {
-    color: #c8c0b0;
-    background: rgba(201, 169, 110, 0.03);
-}
-
-/* ─── Images ─── */
-img {
     max-width: 100%;
-    margin: 1.5em 0;
-    border-radius: 2px;
-    border: 1px solid #2a2720;
-    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-collapse: collapse;
 }
 
-/* ─── Inline style overrides ─── */
-[style*="color"] {
-    color: inherit !important;
-}
-
-[style*="background-color"] {
-    background: transparent !important;
-}
+    table td, table th {
+        border: 1px solid #e2e8f0; /* Subtle grid lines */
+        padding: 0.75em 1em; /* Generous cell padding for a professional feel */
+        line-height: 1.5;
+    }
