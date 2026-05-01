@@ -67,3 +67,8 @@ table {
         padding: 0.75em 1em; /* Generous cell padding for a professional feel */
         line-height: 1.5;
     }
+
+.circular-image {
+    object-fit: cover; /* Prevents the image from stretching or distorting */
+    border-radius: 50%; /* Turns the square into a perfect circle */
+}
