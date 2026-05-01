@@ -49,6 +49,32 @@ function ChangeThemeWithStorage(theme) {
         ChangeTheme(prefersDark ? 'DarkTheme' : 'BlueTheme');
     } else {
         localStorage.setItem('appTheme', theme);
+
+        var editor1 = document.getElementById("editor1");
+        if (editor1) {
+            if (editor1.classList.contains('fluent')) {
+                editor1.classList.remove('fluent');
+            }
+            if (editor1.classList.contains('fluent-dark')) {
+                editor1.classList.remove('fluent-dark');
+            }
+            if (editor1.classList.contains('synthwave')) {
+                editor1.classList.remove('synthwave');
+            }
+            switch (theme)
+            {
+                case 'DarkTheme':
+                    editor1.classList.add('fluent-dark');
+                break;
+                case 'BlueTheme':
+                    editor1.classList.add('fluent');
+                    break;
+                default:
+                    editor1.classList.add('fluent');
+                    break;
+            }
+        }
+
         ChangeTheme(theme);
     }
 }
