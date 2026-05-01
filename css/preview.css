@@ -4,6 +4,17 @@
  * Contains no font families, text colors, sizes, or weight styles.
  */
 
+/* --- Layout & Container --- */
+body {
+    width: 100%;
+    max-width: 800px; /* Optimal reading width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width calculations */
+}
+
 /* --- Document Spacing --- */
 p {
     line-height: 1.65; /* Optimal line-height for body readability */
@@ -68,6 +79,7 @@ table {
         line-height: 1.5;
     }
 
+/* --- Media Utilities --- */
 .circular-image {
     object-fit: cover; /* Prevents the image from stretching or distorting */
     border-radius: 50%; /* Turns the square into a perfect circle */
