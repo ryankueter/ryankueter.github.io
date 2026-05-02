@@ -528,6 +528,30 @@ class RTBlazorfied {
             event.preventDefault();
             this.toggleStatusBar();
         }
+        if (event.key === 'Backspace') {
+            const selection = this.Utilities.getSelection();
+            if (selection && selection.isCollapsed) {
+                const range = selection.getRangeAt(0);
+                const blockLevelElements = ['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'OL', 'UL', 'SECTION', 'ARTICLE', 'HEADER', 'FOOTER'];
+                let block = selection.anchorNode;
+                while (block && block !== this.content) {
+                    if (block.nodeType === Node.ELEMENT_NODE && blockLevelElements.includes(block.nodeName)) break;
+                    block = block.parentNode;
+                }
+                if (block && block !== this.content) {
+                    const marginLeft = parseFloat(window.getComputedStyle(block).marginLeft) || 0;
+                    if (marginLeft > 0) {
+                        const testRange = document.createRange();
+                        testRange.setStart(block, 0);
+                        testRange.setEnd(range.startContainer, range.startOffset);
+                        if (testRange.toString().length === 0) {
+                            event.preventDefault();
+                            this.decreaseIndent();
+                        }
+                    }
+                }
+            }
+        }
         if (event.shiftKey && event.key === 'Tab') {
             event.preventDefault();
             this.decreaseIndent();

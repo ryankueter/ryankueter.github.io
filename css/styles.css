@@ -222,69 +222,92 @@
     gap: 0.25rem;
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 0.45rem 0.9rem;
-    border-radius: 0.5rem;
+    padding: 0.45rem 1rem;
+    border-radius: 0.625rem;
     border: 1.5px solid transparent;
-    transition: all 0.2s ease;
+    transition: all 0.22s ease;
     position: relative;
     height: auto;
-    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    overflow: hidden;
+    letter-spacing: 0.01em;
+}
+
+/* Glass shine overlay */
+.download-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 55%);
+    pointer-events: none;
+    border-radius: inherit;
+    transition: opacity 0.22s ease;
 }
 
 .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
-.download-btn-xlsx {
-    background: #1d6f42;
-    color: #fff;
-    border-color: #155534;
+.download-btn .bi {
+    font-size: 1.1em;
+    line-height: 1;
+    vertical-align: -0.125em;
 }
 
-.download-btn-xlsx:hover {
-    background: #227a4a;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(29,111,66,.35);
+.download-btn:hover::before {
+    opacity: 0.7;
 }
 
-.download-btn-ods {
-    background: #0066b2;
+.download-btn-green {
+    background: linear-gradient(145deg, #27924f 0%, #175e34 100%);
     color: #fff;
-    border-color: #004f8c;
+    border-color: rgba(255,255,255,.3);
+    box-shadow: 0 2px 8px rgba(23,94,52,.35), inset 0 1px 0 rgba(255,255,255,.22);
 }
 
-.download-btn-ods:hover {
-    background: #0072c6;
+.download-btn-green:hover {
+    background: linear-gradient(145deg, #2da658 0%, #1d7040 100%);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(0,102,178,.35);
+    box-shadow: 0 4px 12px rgba(23,94,52,.4), inset 0 1px 0 rgba(255,255,255,.28);
 }
 
-.download-btn-csv {
-    background: var(--PrimaryButtonColor, #4f46e5);
+.download-btn-blue {
+    background: linear-gradient(145deg, #1a82cc 0%, #00508f 100%);
     color: #fff;
-    border-color: var(--PrimaryButtonBorderColor, #4f46e5);
+    border-color: rgba(255,255,255,.3);
+    box-shadow: 0 2px 8px rgba(0,80,143,.35), inset 0 1px 0 rgba(255,255,255,.22);
 }
 
-.download-btn-csv:hover {
-    background: var(--PrimaryButtonColorHover, #6366f1);
+.download-btn-blue:hover {
+    background: linear-gradient(145deg, #2290da 0%, #005fa8 100%);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(79,70,229,.35);
+    box-shadow: 0 4px 12px rgba(0,80,143,.4), inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.download-btn-purple {
+    background: linear-gradient(145deg, #6259f0 0%, #3a32bc 100%);
+    color: #fff;
+    border-color: rgba(255,255,255,.3);
+    box-shadow: 0 2px 8px rgba(58,50,188,.35), inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+.download-btn-purple:hover {
+    background: linear-gradient(145deg, #726af3 0%, #4840cb 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(58,50,188,.4), inset 0 1px 0 rgba(255,255,255,.28);
 }
 
 .download-btn-error {
-    opacity: 0.85;
-    filter: brightness(0.88);
+    opacity: 0.82;
+    filter: brightness(0.85) saturate(0.85);
 }
 
 .download-btn-error:hover {
     opacity: 1;
-    filter: brightness(0.95);
+    filter: brightness(0.95) saturate(1);
 }
 
 .download-btn-badge {
     display: inline-block;
-    background: rgba(255,255,255,.25);
+    background: rgba(255,255,255,.22);
     color: #fff;
     font-size: 0.6rem;
     font-weight: 700;
@@ -294,6 +317,7 @@
     border-radius: 999px;
     margin-left: 2px;
     vertical-align: middle;
+    backdrop-filter: blur(2px);
 }
 
 /* ===================== More design polish ===================== */
