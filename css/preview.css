@@ -17,9 +17,10 @@ body {
 
 /* --- Document Spacing --- */
 p {
-    line-height: 1.65; /* Optimal line-height for body readability */
+    letter-spacing: .1em;
+    line-height: 1.6;
     margin-top: 0;
-    margin-bottom: 1.25em; /* Breathing room between paragraphs */
+    margin-bottom: 1.25em;
 }
 
 h1, h3 {
