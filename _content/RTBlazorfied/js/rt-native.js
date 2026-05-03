@@ -6671,7 +6671,7 @@ rt-native {
   ${v.redo ? this._btn('blazing-rich-text-redo-button', 'Redo', 'Redo (Ctrl+Y)', 'goForward') : ''}
   ${historyDividerNeeded ? this._divider() : ''}
 
-  ${v.statusBarToggle? this._specialBtn('blazing-rich-text-statusbar-button',  'StatusBar', 'Toggle Status Bar (Ctrl+\\)', 'toggleStatusBar')   : ''}
+  ${v.statusBarToggle? this._btn('blazing-rich-text-statusbar-button',  'StatusBar', 'Toggle Status Bar (Ctrl+\\)', 'toggleStatusBar')   : ''}
   ${v.saveHtml       ? this._specialBtn('blazing-rich-text-save-button',       'SaveHtml',  'Save HTML (Ctrl+Shift+S)',     'saveHtml')          : ''}
   ${v.htmlView       ? this._specialBtn('blazing-rich-text-source',            'Code',      'HTML Source (Ctrl+Shift+A)',   'toggleView')        : ''}
   ${v.preview        ? this._specialBtn('blazing-rich-text-preview-button',    'Preview',   'Preview (Ctrl+Shift+P)',       'openPreview')       : ''}
