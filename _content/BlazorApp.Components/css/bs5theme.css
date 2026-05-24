@@ -1227,6 +1227,7 @@ button.close:focus {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--GlassCardBorder, rgba(255,255,255,.28));
+    z-index: 1 !important;  
 }
 
 .app-card:hover {
