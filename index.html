@@ -229,11 +229,28 @@
         <a class="dismiss">&#10005;</a>
     </div>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+
+    <!-- Hunspell spellcheck for RTBlazorfied: WASM engine + dictionary hosted locally (offline), no CDN dependency -->
+    <script src="lib/hunspell/hunspell.js"></script>
+    <script src="lib/hunspell/hunspell-loader.js"></script>
+    <script src="lib/hunspell/hunspell-adapter.js"></script>
+
     <script src="_content/RTBlazorfied/js/RTBlazorfied.js"></script>
     <script src="_content/BlazorApp.Components/js/bootstrap5/bootstrap.bundle.min.js"></script>
     <script src="_content/BlazorApp.Components/js/BS5Theme.js"></script>
     <script src="js/download.js"></script>
+
+    <script>
+        (async function () {
+            const [aff, dic] = await Promise.all([
+                fetch('lib/hunspell/en-us.aff').then(r => r.text()),
+                fetch('lib/hunspell/en-us.dic').then(r => r.text()),
+            ]);
+            window.HunspellDictionaries = { en_US: { aff, dic } };
+            Blazor.start();
+        })();
+    </script>
 </body>
 
 </html>
